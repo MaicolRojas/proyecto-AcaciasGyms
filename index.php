@@ -6,8 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- VISTA DE COMPATIBILIDAD PARA TODOS LOS NAVEGADORES - INTERNET EXPLORER 8-->
     <meta name="viewport" content="width=device-width, initial-scale=1" /> <!-- ETIQUETA PARA QUE SEA RESPONSIVE-->
-    <meta name="description"
-        content="Una página web con el propósito de ser un directorios de gimnasios en el municipio de Acacias – Meta.">
+    <meta name="description" content="Una página web con el propósito de ser un directorios de gimnasios en el municipio de Acacias – Meta.">
     <!-- DESCRIPCION DE LA PAGINA-->
     <meta name="author" content="Maicol Andrey Rojas">
     <!--AUTORES-->
@@ -57,7 +56,7 @@
 
     <!-- FIN DE LA ANIMACION -->
 
-    <?php 
+    <?php
     include 'header.php';
     ?>
     <!--INICIO DEL BANNER-->
@@ -69,8 +68,8 @@
                     <h1>ENTRENA TU CUERPO</h1>
                     <h2 style="text-align: center;">ACACIAGYM</h2>
                     <p>aquí se pone algo que inspire a hacer ejercicio y todas esas cosas...
-                    la cucaracha la cucaracha ya no puede caminar porque le falta porque le 
-                    falta una pata para caminar... </p>
+                        la cucaracha la cucaracha ya no puede caminar porque le falta porque le
+                        falta una pata para caminar... </p>
                     <a href="http://www.google.com" class="btn" style="">INGRESAR</a>
                 </div>
             </div>
@@ -78,10 +77,11 @@
     </div>
     <!--FIN DEL BANNER-->
     <style>
-        #radi{
+        #radi {
             border-radius: 22px;
         }
-        figure{
+
+        figure {
             width: ;
         }
     </style>
@@ -128,14 +128,13 @@
 
         </a>
     </datalist>
-    
-<?php 
-include 'footer.php';
- ?>
+
+    <?php
+    include 'footer.php';
+    ?>
 
     <!-- SE DEBEN LLAMAR LOS ARCHIVOS JS PARA QUE FUNCIONE CORRECTAMENTE-->
     <!-- INICIO DE ARCHIVOS JS-->
-        <a href="#" class="scroll-top"><i class="fa fa-chevron-up" aria-hidden="true"></i></a> 
     <!--  (NECESARIO PARA BOSTSTRAP Y PLUGINS JAVASCRIPT) -->
     <script src="js/jquery.min.js"></script>
     <!-- Bootstrap JS -->
