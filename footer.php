@@ -7,7 +7,7 @@
     <!-- Inicio del Footer -->
     <div class="footer-top">
         <div class="container">
-            <div class="row"">
+            <div class="row">
                         <div class=" col-sm-6 col-xs-10">
                 <div class="contact-us">
                     <h3>Contactanos</h3>

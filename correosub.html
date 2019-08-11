@@ -2,53 +2,46 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <title>Bootstrap Cover Template</title>
-  <style type="text/css">
+    <meta charset="UTF-8">
+    <title>Bootstrap Cover Template</title>
+    <style type="text/css">
 
-  </style>
-  <link rel='stylesheet' href='css/css/bootstrap.min.css'>
-  <link rel="stylesheet" href="css/style.css">
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <meta name="viewport" content="width=device-width" />
+    </style>
+    <link rel='stylesheet' href='css/css/bootstrap.min.css'>
+    <link rel="stylesheet" href="css/style.css">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width" />
 </head>
 
 <body>
-  <div class="site-wrapper">
-    <div class="site-wrapper-inner">
-      <div class="cover-container container">
-        <div class="masthead clearfix">
-          <div class="cover-container container inner">
-            <h3 class="masthead-brand"
-              style="text-align: center; font-family: 'Poppins'; font-size: 40px; font-weight: bold">¡Ahorra Estas
-              Suscrito en AcaciasGym!</h3>
-
-          </div>
+    <div class="site-wrapper">
+        <div class="site-wrapper-inner">
+            <div class="cover-container container">
+                <div class="masthead clearfix">
+                    <div class="cover-container container inner">
+                        <h3 class="masthead-brand" style="text-align: center; font-family: 'Poppins'; font-size: 40px; font-weight: bold">¡Ahorra Estas Suscrito en AcaciasGym!</h3>
+                        <div class="inner cover">
+                            <h1 class="cover-heading" style="font-family: 'Poppins'">{{correo}}</h1>
+                            <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 20px; font-weight: bold">¡Hola {{nombre}}!
+                            </p>
+                            <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 18px; font-weight: bold">Ahora estas suscrito a <a href="#" style="color: #00b3ed">AcaciasGym</a>, recibirás notificaciones sobre todo lo relacionado con Ejercicio, Gimnasios, Rutinas, además de conocer los gimnasios y lugares para desarrollar ejercicio
+                                en el municipio de Acacias. ¡Bienvenido!</p>
+                            <p class="lead" style="font-family: 'Poppins'; font-size: 40px; font-weight: bold">!Gracias!</p>
+                            <p class="lead">
+                                <a href="#" class="btn btn-lg btn-default">AcaciasGym</a>
+                            </p>
+                            <p class="lead" style="text-align: left;">Fecha : {{fecha}}</p>
+                            <p class="lead" style="text-align: left;">Hora : {{hora}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="inner cover">
-          <h1 class="cover-heading" style="font-family: 'Poppins'">{{correo}}</h1>
-          <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 20px; font-weight: bold">¡Hola
-            {{nombre}}!</p>
-          <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 18px; font-weight: bold">Ahora
-            estas suscrito a <a href="#" style="color: #00b3ed">AcaciasGym</a>, recibirás notificaciones sobre todo lo
-            relacionado con Ejercicio, Gimnasios, Rutinas, además de conocer los gimnasios y lugares para desarrollar
-            ejercicio en el municipio de Acacias. ¡Bienvenido!</p>
-          <p class="lead" style="font-family: 'Poppins'; font-size: 40px; font-weight: bold">!Gracias!</p>
-          <p class="lead">
-            <a href="#" class="btn btn-lg btn-default">AcaciasGym</a>
-          </p>
-          <p class="lead" style="text-align: left;">Fecha : {{fecha}}</p>
-          <p class="lead" style="text-align: left;">Hora : {{hora}}</p>
-        </div>
-      </div>
     </div>
-
-  </div>
-  <footer class="mastfoot mt-auto">
-    <div class="inner">
+    <footer class="mastfoot mt-auto" style="background-color: black; color: white">
+    <!--<div class="inner">-->
       <p>© Todos los derechos reservados 2019. Plataforma digital AcacyasGym.</p>
-    </div>
+    <!--</div>-->
   </footer>
 </body>
-
 </html>
