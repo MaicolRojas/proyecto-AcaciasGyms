@@ -601,7 +601,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 }
 .time, .date {
 	min-width: 93px;
-	background: #9b570e;
+	background: #1269c5;
 	color: #fff;
 	font-size: 13px;
 	line-height: 30px;
@@ -620,7 +620,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 	-o-transform: skew(35deg);
 }
 .date {
-	background: #fb9221;
+	background: #00b3ed;
 	margin: 0 3px 0 -12px;
 	padding: 0 10px 0px 20px;
 	min-width: 80px;
@@ -1606,9 +1606,9 @@ ul.tags-list li a:hover {
 	padding: 8px 10px;
 	border-radius: 0;
 	background: none;
-	border: 2px solid #fb9221;
+	border: 2px solid #00b3ed;
 	font-size: 16px;
-	color: #fb9221;
+	color: #00a4eb;
 	-moz-transition: all 0.3s ease 0s;
 	-o-transition: all 0.3s ease 0s;
 	-webkit-transition: all 0.3s ease 0s;
@@ -1617,7 +1617,7 @@ ul.tags-list li a:hover {
 	cursor: pointer;
 }
 .form-wrapper input[type="submit"]:hover {
-	background: #fb9221;
+	background: #011186;
 	color: #fff
 }
 .contact-info {
