@@ -104,7 +104,7 @@
                     </div>
                     <div class="col-sm-5 col-xs-12">
                         <?php
-                        echo "<figure class='about-top-right'><<img src='data:image/jpg;base64," . base64_encode($campo['imagen_entrenador']) . "'></figure>";
+                        echo "<figure class='about-top-right'><<img src='".$campo['imagen_entrenador']."'></figure>";
 
                         ?>
                     </div>
@@ -175,8 +175,8 @@
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
-                        <div class='gallery-box'><figure><img src='data:image/jpg;base64," . base64_encode($campo['imagen']) . "'></figure>
-                        <a href='images/gallery2.png' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
+                        <div class='gallery-box'><figure><img src='".$campo['imagen']."'></figure>
+                        <a href='".$campo['imagen']."' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
                     }
                     ?>
                 </div>

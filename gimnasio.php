@@ -111,7 +111,7 @@
                     </div>
                     <div class="col-sm-5 col-xs-12">
                         <?php
-                        echo "<figure class='about-top-right'><img style='max-width: 400px;' src='data:image/png;base64," . base64_encode($campo['imagen_gimnasio']) . "'></figure>";
+                        echo "<figure class='about-top-right'><img style='max-width: 400px;' src='". $campo['imagen_gimnasio']."'></figure>";
                     }
                     ?>
 
@@ -134,8 +134,8 @@
                     while ($campo2 = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='item'>
                                     <div class='trainers-box'>
-                                        <figure><img src='data:image/jpg;base64," . base64_encode($campo2['imagen_entrenador']) . "' alt=''></figure>
-                                        <span style='background: #00b3ed; color:white;border:#ced4da;'>" . $campo2['nombre_entrenador'] . " " . $campo2['apellido_etrenador'] . "</span>
+                                        <a href='entrenador.php?".$campo2['id_entrenadores']."'><figure><img src='".$campo2['imagen_entrenador']. "' alt=''></figure></a>
+                                        <a href='entrenador.php?".$campo2['id_entrenadores']."'><span style='background: #00b3ed; color:white;border:#ced4da;'>" . $campo2['nombre_entrenador'] . " " . $campo2['apellido_etrenador'] . "</span></a>
                                     </div>
                                 </div>";
                     }
@@ -234,7 +234,7 @@
                         echo "<div class='col-sm-4 col-xs-12'>
                             <div class='feature-box'>
                                 <figure>
-                                    <img src='data:image/jpg;base64," . base64_encode($res['imagen_servicio']) . "'>
+                                    <img src='".$res['imagen_servicio']."'>
                                     <div class='time-box'>
                                         <span class='date'><span>" . $res['hora_de_apertura'] . "</span></span>
                                         <span class='time'><span>" . $res['hora_de_cierre'] . "</span></span>

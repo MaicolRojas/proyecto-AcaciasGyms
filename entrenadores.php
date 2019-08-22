@@ -86,8 +86,8 @@
                         //echo $campo['Nombre_entrenador'];
                         echo "<div class='col-sm-3 col-xs-12'>
                             <div class='trainers-box'>
-                                <figure><img src='data:image/jpg;base64," . base64_encode($campo['imagen_entrenador']) . "'></figure>
-                                <a href='entrenador.php?" . $campo['id_entrenadores'] . "' style='color:black'><span style=' font-family: poppins;background: #00b3ed; color:white;border:#ced4da;'>" . $campo['nombre_entrenador'] . " " . $campo['apellido_etrenador'] . "<br></span></a>
+                                <a href='entrenador.php?".$campo['id_entrenadores']."'><figure><img src='".$campo['imagen_entrenador']."'></a></figure>
+                                <a href='entrenador.php?".$campo['id_entrenadores'] . "' style='color:black'><span style=' font-family: poppins;background: #00b3ed; color:white;border:#ced4da;'>" . $campo['nombre_entrenador'] . " " . $campo['apellido_etrenador'] . "<br></span></a>
                             </div>
                         </div>";
                         #estilo del span background: #00b3ed; color:white;border:#ced4da;
