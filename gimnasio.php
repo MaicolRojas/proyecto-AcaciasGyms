@@ -152,39 +152,47 @@
             <div class="row">
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
+                        <?php
+                        $Const = "SELECT * FROM caracterisitcas WHERE id_caracteristicas = '$id'";
+                        $reslt = mysqli_query($conexion, $Const);
+                        while ($ress = mysqli_fetch_array($reslt, MYSQLI_BOTH)) {
+                        ?>
                         <figure><img src="images/counter1.png" alt=""></figure>
-                        <strong class="counter">5</strong>
+                        <?php echo " <strong class='counter'>".$ress['entrenadores']."</strong>"; ?>
                         <small>Entrenadores</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <figure><img src="images/counter2.png" alt=""></figure>
-                        <strong class="counter">500</strong>
+                        <?php echo " <strong class='counter'>".$ress['clientes_satisfechos']."</strong>"; ?>
                         <small>Clientes satisfechos</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <figure><img src="images/counter3.png" alt=""></figure>
-                        <strong class="counter">50</strong>
+                        <?php echo " <strong class='counter'>".$ress['premios_recibidos']."</strong>"; ?>
                         <small>Premios recibidos</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <figure><img src="images/counter4.png" alt=""></figure>
-                        <strong class="counter">20</strong>
+                        <?php echo " <strong class='counter'>".$ress['equipamentos']."</strong>"; ?>
                         <small>Euipamentos</small>
                     </div>
                 </div>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
     <!-- FIN DESCRIPCION DE EQUIPAMENTO PREMIOS ETC -->
     <br>
     <!--CUADRO DE INFORMACION-->
-    <div class="professional-outer" style="background: url('img/banner/banner1.jpg')no-repeat center top / cover; text-align: justify;">
+    <!--<div class="professional-outer" style="background: url('img/banner/banner1.jpg')no-repeat center top / cover; text-align: justify;">
         <div class="container">
             <div class="professional-list">
                 <div class="row">
@@ -215,7 +223,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--FIN CUADRO DE INFORMACION-->
     <br>
     <!--INFORMACION SOBRE SERVICIOS-->
@@ -462,6 +470,31 @@
         </div>
     </div>
     <!--FIN MAPA POR MEDIO DE WAZE -->
+    <!--GALERIA-->
+    <!--FIN DE LA GALERIA-->
+    <div class="gallery-outer about-top-outer">
+            <div class="container">
+                <div class="head border">
+                    <h3><span style="color: #00b3ed">TÚ GALERIA</span></h3>
+                </div>
+                <ul class="tabs">
+                    <li class="active"><span data-filter="*">Imagenes</span></li>
+                </ul>
+                <div class="gallery-list">
+                    <div class="row grid">
+                    <?php
+                    $consulta2 = "SELECT * FROM galeria_gimnasio WHERE id_galeria = '$id'";
+                    $resultado2 = mysqli_query($conexion, $consulta2);
+                    while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
+                        echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
+                        <div class='gallery-box'><figure><img src='".$campo['imagen']."'></figure>
+                        <a href='".$campo['imagen']."' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    <!-- FIN DE LA GALERIA>
     <!--COMENTARIOS-->
     <div class="about-top-outer">
         <div class="container">

@@ -16,6 +16,16 @@
 	<!--<a s href="data:image/png;base64,...(blah blah base64-encoded png goes here)..." width="70" height="38" alt="image embedded using base64 encoding!"></a>
 	<iframe class="iframe" src="https://maps.google.com/?ll=23.135249,-82.359685&z=14&t=m&output=embed" height="600" frameborder="0" style="border:0" allowfullscreen></iframe>
 	<iframe src="https://embed.waze.com/iframe?zoom=16&lat=3.987078&lon=-73.765383&ct=livemap" width="600" height="450" allowfullscreen></iframe>-->
-	<img src="img/Entrenadores/trainer 1.png">
+	<!--<img src="img/Entrenadores/trainer 1.png">-->
+
+	<?php
+	date_default_timezone_set('America/Bogota');
+	$fecha = date("d-m-Y");
+	$hora = date("h:i a");
+
+	echo $fecha;
+	echo "<br>";
+	echo $hora;
+	?>
 </body>
 </html>

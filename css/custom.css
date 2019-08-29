@@ -771,6 +771,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 }
 .trainers-box figure img{
 	transition: transform .2s;
+	max-width: 106%
 }
 .trainers-box figure img:hover{
 	-ms-transform: scale(1.1); /* IE 9 */
@@ -976,10 +977,12 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 .footer {
 	display: block;
 	background: #00b3ed url(../img/footer/footer.png) no-repeat center top / cover;
+	text-align: left;
 }
 .footer-top {
 	padding-top: 70px;
 	padding-bottom: 55px;
+	text-align: left;
 }
 .footer h3 {
 	display: block;
@@ -1744,6 +1747,7 @@ h2 {
 .footer-top {
 	padding-top: 35px;
 	padding-bottom: 15px;
+	text-align: left;
 }
 ul.follow-us li {
 	margin-right: 10px;

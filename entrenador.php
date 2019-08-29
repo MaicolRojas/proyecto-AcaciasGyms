@@ -116,7 +116,7 @@
                 <h1 style="color: white">!ENTRENA TU CUERPO!</h1>
             </center>
         </div>
-        </div>
+       
         <div class="cal-info-outer">
             <div class="container">
                 <div class="cal-info-list">
@@ -159,6 +159,7 @@
                 <h1 style="color: white">!GALERIA DEL ENTRENADOR!</h1>
             </center>
         </div>
+        <!--GALERIA-->
         <div class="gallery-outer">
             <div class="container">
                 <div class="head">
@@ -171,7 +172,7 @@
                     <div class="row grid">
                     <?php
                     }
-                    $consulta2 = "SELECT * FROM galeria WHERE id_galeria = '$id'";
+                    $consulta2 = "SELECT * FROM galeria_entrenador WHERE id_galeria = '$id'";
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
@@ -182,6 +183,129 @@
                 </div>
             </div>
         </div>
+        <!--FIN DE LA GALERIA-->
+        <!--COMENTARIO-->
+         <div class="about-top-outer">
+        <div class="container">
+            <div class="head border">
+                <h3><span style="color: #00b3ed">DEJA UN COMENTARIO</span></h3>
+            </div>
+            <div class="rows">
+                <div class="container">
+                    <div class="form-wrapper">
+                        <h3>¡Completa la informacíon!</h3><br>
+                        <p>Siempre nos complace conocer su opinión, así que no dude en dejar un comentario sobre el Gimnasio y como le pareció este, o si tiene alguna duda escríbala, para obtener una respuesta.</p>
+                        <?php echo "<form method='POST'>"; ?>
+                        <div class="row input-row">
+                            <div class="col-sm-6">
+                                <input name="primer_nombre" type="text" placeholder="PRIMER NOMBRE*" required>
+                            </div>
+                            <div class="col-sm-6">
+                                <input name="segundo_nombre" type="text" placeholder="SEGUNDO NOMBRE*" required>
+                            </div>
+                        </div>
+                        <div class="row input-row">
+                            <div class="col-sm-12">
+                                <input name="telefono" type="tel" placeholder="TELEFONO*" required minlength="10" maxlength="10">
+                            </div>
+                        </div>
+                        <div class="row input-row">
+                            <div class="col-sm-12">
+                                <input name="correo" type="email" placeholder="CORREO*" required>
+                            </div>
+                        </div>
+                        <div class="row input-row">
+                            <div class="col-sm-12">
+                                <textarea name="comentario" placeholder="COMENTARIO*" required></textarea>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <input type="submit" name="env" class="btn" value="Enviar comentario">
+                            </div>
+                        </div>
+                        </form>
+                    </div>
+                    <?php
+
+                    if (isset($_POST['env'])) {
+                        try {
+                            $dominio = $_SERVER["HTTP_HOST"];
+                            $res = $_SERVER["REQUEST_URI"];
+                            $url = "http://" . $dominio . $res;
+
+                            $id_gym = explode("p?", $url);
+                            $id = $id_gym[1];
+                            $primer_nombre = $_POST['primer_nombre'];
+                            $segundo_nombre = $_POST['segundo_nombre'];
+                            $telefono = $_POST['telefono'];
+                            $correo = $_POST['correo'];
+                            $comentario = $_POST['comentario'];
+                            date_default_timezone_set('America/Bogota');
+                            $fecha = date("Y-m-d");
+                            $hora = date("h:i a");
+                            include 'conexion.php';
+                            $consulta = "SELECT * FROM entrenadores WHERE id_entrenadores = '$id'";
+                            $resultado = mysqli_query($conexion, $consulta);
+                            while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
+                                $correo_entrenador = $campo['correo_entrenador'];
+                                $nombre_entrenador = $campo['nombre_entrenador'];
+                                $apellido_etrenador = $campo['apellido_etrenador'];
+
+                            }
+                            $consulta = "INSERT INTO comentarios_entrenador (id_comentario, primer_nombre, segundo_nombre, telefono,correo,mensaje,fecha,hora) VALUES ('$id','$primer_nombre','$segundo_nombre','$telefono','$correo','$comentario','$fecha','$hora');";
+                            $result = mysqli_query($conexion, $consulta);
+
+                            include 'comentario_gym\enviar_comen.php';
+                            /*Configuracion de variables para enviar el correo*/
+                            $mail_username = "acaciasgyms@gmail.com"; //Correo electronico saliente ejemplo: tucorreo@gmail.com
+                            $mail_userpassword = "3112031849"; //Tu contraseña de gmail
+                            $mail_addAddress = "$correo"; //correo electronico que recibira el mensaje
+                            $template = "comentario_gym\correo_comentario.php"; //Ruta de la plantilla HTML para enviar nuestro mensaje
+
+                            /*Inicio captura de datos enviados por $_POST para enviar el correo */
+                            $mail_setFromEmail = "AcaciasGym@gmail.com";
+                            $mail_setFromName = "AcaciasGym";
+
+                            email_gym($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $comentario, $id, $correo_entrenador,$nombre_entrenador, $apellido_etrenador); //Enviar el mensaje
+
+                        } catch (Exception $e) {
+                            echo $e;
+                        }
+                    }
+                    ?>
+
+                    <div class="comments-wrapper">
+                        <?php
+                        $sql = "SELECT COUNT(*) total FROM comentarios_entrenador WHERE id_comentario = '$id'";
+                        $result = mysqli_query($conexion, $sql);
+                        $fila = mysqli_fetch_assoc($result);
+                        echo "<h3>" . $fila['total'] . " COMENTARIO(s)" . "</h3>";
+
+                        ?>
+                        <ul class="row comments">
+                            <?php
+                            $comentarios = "SELECT * FROM comentarios_entrenador WHERE id_comentario = '$id'";
+                            $come = mysqli_query($conexion, $comentarios);
+                            while ($cm = mysqli_fetch_array($come, MYSQLI_BOTH)) {
+                                echo "<li class='col-sm-12 clearfix'>
+                                <div class='com-img'><img src='images/coment-img1.png' class='img-circle'>
+                                </div>
+                                <div class='com-txt'>
+                                    <h3>" . $cm['primer_nombre'] . " " . $cm['segundo_nombre'] . "<span>Fecha: " . $cm['fecha'] . " Hr: " . $cm['hora'] . "</span></h3>
+                                    <p>" . $cm['mensaje'] . "</p>
+                                    /*<a href='#''><span class='icon-reply-icon'></span>Reply</a>*/
+                                </div>";
+                            }
+                            ?>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        <!-- FIN COMENTARIOS-->
     </div>
     </div>
     <?php

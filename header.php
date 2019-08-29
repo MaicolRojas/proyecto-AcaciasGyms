@@ -28,7 +28,7 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="noticias.php">Noticias</a>
                             </li>
-                            <li class="nav-item dropdown">
+                           <!-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Gimnasios</a>
                                 <div class="dropdown-menu">
 
@@ -40,10 +40,20 @@
                                         echo "<a class='dropdown-item' href='gimnasio.php?" . $campo['id_gimnasio'] . "" . "' style='font-family: cursive;font-size: small;'>" . $campo['nombre_gimnasio'] . "</a>";
                                     }
                                     ?>
-                                    <div role="separator" class="dropdown">
+                                    <li class="nav-item">
+                                    <a class="nav-link" href="gimnasios.php">Gimnasios</a>
+                                    </li>
+                                    <div role="separator" class="dropdown">-->
+                                         <li class="nav-item">
+                                <a class="nav-link" href="gimnasios.php">Gimnasios</a>
+                            </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="entrenadores.php">Entrenadores</a>
                             </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contacto.php">Contacto</a>
+                            </li>
+                            
                     </div>
             </div>
             </li>

@@ -57,16 +57,16 @@
     include 'header.php';
     ?>
     <!-- INICIO DEL BANNER -->
-    <div class="banner-outer inner-banner trainers-banner">
+    <div class="banner-outer inner-banner trainers-banner" style="background: url(img/banner/banner1a.jpg) no-repeat center top / cover;">
         <span class="banner-shadow"></span>
         <div class="container">
             <div class="content">
-                <h1>ENTRENADORES</h1>
+                <h1>Gimnasios</h1>
                 <div class="breadcrumbs_outer">
                     <div class="container">
                         <ul class="breadcrumbs">
                             <li><a href="index.php" style="color: #00b3ed">INICIO</a></li>
-                            <li>ENTRENADORES</li>
+                            <li>Gimnasios</li>
                         </ul>
                     </div>
                 </div>
@@ -80,14 +80,14 @@
                 <div class="row">
                     <?php
                     include("conexion.php");
-                    $consulta = "SELECT * FROM entrenadores";
+                    $consulta = "SELECT * FROM gimnasio";
                     $resultado = mysqli_query($conexion, $consulta);
                     while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
                         //echo $campo['Nombre_entrenador'];
-                        echo "<div class='col-sm-3 col-xs-12'>
+                        echo "<div class='col-sm-4 col-xs-10'>
                             <div class='trainers-box'>
-                                <a href='entrenador.php?".$campo['id_entrenadores']."'><figure><img style='border-radius:2%' src='".$campo['imagen_entrenador']."'></a></figure>
-                                <a href='entrenador.php?".$campo['id_entrenadores'] . "' style='color:black'><br><span style=' font-family: poppins;background: #00b3ed; color:white;border:#ced4da;'>" . $campo['nombre_entrenador'] . " " . $campo['apellido_etrenador'] . "<br></span></a>
+                                <a href='gimnasio.php?".$campo['id_gimnasio']."'><figure><img style ='width:500px; height:220px; border-radius:2%;' src='".$campo['imagen_gimnasio']."'></a></figure>
+                                <a href='gimnasio.php?".$campo['id_gimnasio'] . "' style='color:black'><br><span class='btn' style=' font-family: poppins;background: #00b3ed; color:white;border:#ced4da;'>" . $campo['nombre_gimnasio'] ."<br></span></a>
                             </div>
                         </div>";
                         #estilo del span background: #00b3ed; color:white;border:#ced4da;

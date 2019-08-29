@@ -22,7 +22,7 @@
                         <h3 class="masthead-brand" style="text-align: center; font-family: 'Poppins'; font-size: 40px; font-weight: bold">¡Has recibido un nuevo comentario!</h3>
                         <div class="inner cover">
                             <!--<h1 class="cover-heading" style="font-family: 'Poppins'">{{correo}}</h1>-->
-                            <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 20px; font-weight: bold">¡Hola {{nombre_gimnasio}}!
+                            <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 20px; font-weight: bold">¡Hola {{nombre_entrenador}} {{apellido_entrenador}}!
                             </p>
                             <p class="lead" style="text-align: justify; font-family: 'Poppins'; font-size: 20px; font-weight: bold">Has recibido un nuevo <a href="http://localhost/Acacias-Gym/www/gimnasio.php?{{id}}" style="color: #00b3ed">Comentario</a>. <br>Más informacíon del comentario:</p>
                             <p class="lead" style="text-align: left;">Nombre : {{nombre}} {{apellido}}</p>

@@ -3,7 +3,7 @@
 <center><a href="http://www.websmultimedia.com/contador-de-visitas-gratis" title="Contador De Visitas Gratis">
 <img style="border: 0px solid; display: inline;" alt="contador de visitas" src="http://www.websmultimedia.com/contador-de-visitas.php?id=269435"></a><br><br>CONTADOR DE VISTAS</center>
 <!--BOTON DE DESPLAZAMIENTO-->
-<footer class="footer">
+<footer class="footer" style="text-align: left;">
     <!-- Inicio del Footer -->
     <div class="footer-top">
         <div class="container">
@@ -43,12 +43,12 @@
     <?php
     @$mail = $_POST['mail'];
     if (isset($_POST['enviar'])) {
-        include 'enviar.php';
+        include 'correo_suscribirse\enviar.php';
         /*Configuracion de variables para enviar el correo*/
         $mail_username = "acaciasgyms@gmail.com"; //Correo electronico saliente ejemplo: tucorreo@gmail.com
         $mail_userpassword = "3112031849"; //Tu contraseña de gmail
         $mail_addAddress = "$mail"; //correo electronico que recibira el mensaje
-        $template = "correosub.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
+        $template = "correo_suscribirse\plantilla.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
 
         /*Inicio captura de datos enviados por $_POST para enviar el correo */
         $mail_setFromEmail = "AcaciasGym@gmail.com";

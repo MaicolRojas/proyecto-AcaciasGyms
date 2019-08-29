@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /*try {
 	$dominio = $_SERVER["HTTP_HOST"];
 	$res = $_SERVER["REQUEST_URI"];
@@ -29,7 +29,7 @@
         /*$mail_username = "acaciasgyms@gmail.com"; //Correo electronico saliente ejemplo: tucorreo@gmail.com
         $mail_userpassword = "3112031849"; //Tu contraseña de gmail
         $mail_addAddress = "$correo"; //correo electronico que recibira el mensaje
-        $template = "correo_comentario\correo_comentario.php"; //Ruta de la plantilla HTML para enviar nuestro mensaje
+        $template = "correo_comentario\correo_comentario.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
 
         /*Inicio captura de datos enviados por $_POST para enviar el correo */
         /*$mail_setFromEmail = "AcaciasGym@gmail.com";
