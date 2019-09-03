@@ -56,7 +56,7 @@
                     <input type="text" name="nombre" placeholder="Nombres" required="" />
                     <input type="text" name="apellido" placeholder="Apellidos" required="" />
                     <input type="email" name="correo" placeholder="Correo" required="" />
-                    <input type="text" name="telefono" placeholder="Telefono" required="" />
+                    <input type="number" name="telefono" placeholder="Telefono" required="" max="10" />
                     <input type="text" name="tema" placeholder="Tema" required="" />
                     <textarea name="Mensaje" placeholder="Mensaje" required=""></textarea>
                     <input type="submit" value="Enviar">

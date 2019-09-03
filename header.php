@@ -44,7 +44,10 @@
                                     <a class="nav-link" href="gimnasios.php">Gimnasios</a>
                                     </li>
                                     <div role="separator" class="dropdown">-->
-                                         <li class="nav-item">
+                            <li class="nav-item">
+                                <a class="nav-link" href="parques.php">Parques</a>
+                            </li>
+                            <li class="nav-item">
                                 <a class="nav-link" href="gimnasios.php">Gimnasios</a>
                             </li>
                             <li class="nav-item">

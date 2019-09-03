@@ -105,6 +105,25 @@ h2.sub-head-w3-agileits {
     -moz-transition: 0.5s all;
     font-family: 'Montserrat', sans-serif;
 }
+.login-form input[type="number"], .login-form textarea, .login-form input[type="email"] {
+    width: 100%;
+    padding: 10px 20px;
+    border: none;
+	border-radius: 18px;
+    outline: none;
+    color: #fff;
+	    box-sizing: border-box;
+    font-size: 13px;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    background: rgba(45, 45, 45, 0.56);
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    font-family: 'Montserrat', sans-serif;
+}
 h1 {
     font-size: 45px;
     letter-spacing: 5px;

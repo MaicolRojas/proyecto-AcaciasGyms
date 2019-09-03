@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-08-2019 a las 02:34:55
+-- Tiempo de generación: 03-09-2019 a las 17:02:29
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -25,6 +25,29 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `caracterisitcas`
+--
+
+CREATE TABLE `caracterisitcas` (
+  `id_caracteristicas` int(3) NOT NULL,
+  `entrenadores` int(3) NOT NULL,
+  `clientes_satisfechos` int(3) NOT NULL,
+  `premios_recibidos` int(3) NOT NULL,
+  `equipamentos` int(3) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `caracterisitcas`
+--
+
+INSERT INTO `caracterisitcas` (`id_caracteristicas`, `entrenadores`, `clientes_satisfechos`, `premios_recibidos`, `equipamentos`) VALUES
+(1, 2, 100, 5, 30),
+(2, 1, 50, 2, 25),
+(3, 2, 70, 3, 35);
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `comentarios`
 --
 
@@ -42,6 +65,30 @@ CREATE TABLE `comentarios` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `comentarios_entrenador`
+--
+
+CREATE TABLE `comentarios_entrenador` (
+  `id_comentario` int(3) NOT NULL,
+  `primer_nombre` varchar(20) NOT NULL,
+  `segundo_nombre` varchar(20) NOT NULL,
+  `telefono` varchar(10) NOT NULL,
+  `correo` varchar(30) NOT NULL,
+  `mensaje` varchar(500) NOT NULL,
+  `fecha` date NOT NULL,
+  `hora` time NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `comentarios_entrenador`
+--
+
+INSERT INTO `comentarios_entrenador` (`id_comentario`, `primer_nombre`, `segundo_nombre`, `telefono`, `correo`, `mensaje`, `fecha`, `hora`) VALUES
+(1, 'Maicol', 'Rojas', '3112031849', 'maicolandreyrojas@gmail.com', 'as', '2019-08-27', '06:42:00');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `correos_personas`
 --
 
@@ -54,7 +101,8 @@ CREATE TABLE `correos_personas` (
 --
 
 INSERT INTO `correos_personas` (`correo`) VALUES
-('maicolandreyrojas@gmail.com');
+('maicolandreyrojas@gmail.com'),
+('elvergalarga1955@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -169,19 +217,19 @@ CREATE TABLE `envio_informacion` (
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `galeria`
+-- Estructura de tabla para la tabla `galeria_entrenador`
 --
 
-CREATE TABLE `galeria` (
+CREATE TABLE `galeria_entrenador` (
   `id_galeria` int(3) DEFAULT NULL,
   `imagen` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `galeria`
+-- Volcado de datos para la tabla `galeria_entrenador`
 --
 
-INSERT INTO `galeria` (`id_galeria`, `imagen`) VALUES
+INSERT INTO `galeria_entrenador` (`id_galeria`, `imagen`) VALUES
 (1, 'img/Galeria/entrenador 1/1.jpg'),
 (1, 'img/Galeria/entrenador 1/2.jpeg'),
 (1, 'img/Galeria/entrenador 1/3.jpg'),
@@ -198,6 +246,37 @@ INSERT INTO `galeria` (`id_galeria`, `imagen`) VALUES
 (5, 'img/Galeria/entrenador 5/2.jpeg'),
 (5, 'img/Galeria/entrenador 5/3.png'),
 (5, 'img/Galeria/entrenador 5/4.jpeg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `galeria_gimnasio`
+--
+
+CREATE TABLE `galeria_gimnasio` (
+  `id_galeria` int(3) DEFAULT NULL,
+  `imagen` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `galeria_gimnasio`
+--
+
+INSERT INTO `galeria_gimnasio` (`id_galeria`, `imagen`) VALUES
+(1, 'img/gimnasio/Gimnasio1.jpg'),
+(2, 'img/gimnasio/Gimnasio2.jpg'),
+(3, 'img/gimnasio/Gimnasio3.jpg');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `galeria_parque`
+--
+
+CREATE TABLE `galeria_parque` (
+  `id_galeria` int(3) DEFAULT NULL,
+  `imagen` varchar(200) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -286,6 +365,39 @@ INSERT INTO `gimnasio_servicio` (`id_gimnasio`, `id_servicio`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `parque`
+--
+
+CREATE TABLE `parque` (
+  `id_parque` int(3) NOT NULL,
+  `nombre_parque` varchar(100) NOT NULL,
+  `descripcion` varchar(300) NOT NULL,
+  `direccion` varchar(100) NOT NULL,
+  `latitud` varchar(100) NOT NULL,
+  `longitud` varchar(100) NOT NULL,
+  `imagen_parque` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `parque`
+--
+
+INSERT INTO `parque` (`id_parque`, `nombre_parque`, `descripcion`, `direccion`, `latitud`, `longitud`, `imagen_parque`) VALUES
+(1, 'Parque Principal de Acacias', ' el parque principal (fundado en 1934), La Iglesia Catedral Nuestra Señora del Carmen (ubicada en el parque central del municipio), La manga de Coleo (se encuentra a las afueras del casco urbano, vía Acacías - Villavicencio) y el Malecón turístico, ubicado a 800 metros del centro del municipio.', 'Cl. 14 #141, Acacías, Meta', '3.985967', '-73.758066', 'img/parques/parque_principal.jpg'),
+(2, 'Villa Olímpica', 'evento masivo de Actividad Física Musicalizada a desarrollarse en la villa Olímpica del barrio San Cristóbal, para toda la comunidad del Municipio ', 'Cra. 14 #18, Acacías, Meta', '3.99096510', '-73.75704420', 'img/parques/villa-olimpica.png'),
+(3, 'Parque Biosaludable Barrio Popular', 'parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 5 #16-23 a 16-1, Acacías, Meta', '3.98821590', '-73.75052460', 'img/parques/parque-biosaludable.jpg'),
+(4, 'Parque Barrio La Tiza', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra 25 # 21 a Acacias - Meta', '3.99669530', '-73.76465690', 'img/parques/parque-tiza.jpg'),
+(5, 'Las Colinas', 'Un espacio abierto, que cuenta con mucha naturaleza a su alrededor, para desarrollar deportes físicos, perfecto para caminatas y excursiones.', 'Cra. 47 villancencio - Acacias', '3.99270210', '-73.78281040', 'img/parques/las-colinas.jpg'),
+(6, 'Parque 3 Puentes', 'parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 33, Acacías, Meta', '3.99341230', '-73.77457510', 'img/parques/tres-puentes.jpg'),
+(7, 'Parque Barrio La Esperanza', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 14 #21-247 a 21-217, Acacías, Meta', '3.99634450', '-73.75616550', 'img/parques/Esparque-esperanza.jpg'),
+(8, 'Parque Barrio Guaratara', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 77a # 25 25a Acacias Meta', '3.99746970', '-73.75910530', 'img/parques/parque-guaratara.jpg'),
+(9, 'Parque Barrio El Morichal', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra 16. 22 Acacias Meta', '3.99507310', '-73.75786000', 'img/parques/parque-morichal.jpg'),
+(10, 'Parque Barrio Bambú', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 13 # 21 a - 22 a', '3.99367550', '-73.75478970', 'img/parques/Parque-Bambu.jpg'),
+(11, 'Parque Bancarios\r\n', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', '# a 13-78,, Cra. 32 #132, Acacías, Meta', '3.98706880', '-73.77296070', 'img/parques/parque-bancarios.jpg');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `profesion`
 --
 
@@ -359,9 +471,21 @@ CREATE TABLE `usuarios` (
 --
 
 --
+-- Indices de la tabla `caracterisitcas`
+--
+ALTER TABLE `caracterisitcas`
+  ADD KEY `id_caracteristicas` (`id_caracteristicas`);
+
+--
 -- Indices de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
+  ADD KEY `id_comentario` (`id_comentario`);
+
+--
+-- Indices de la tabla `comentarios_entrenador`
+--
+ALTER TABLE `comentarios_entrenador`
   ADD KEY `id_comentario` (`id_comentario`);
 
 --
@@ -392,9 +516,21 @@ ALTER TABLE `envio_informacion`
   ADD KEY `id_gimnasio` (`id_gimnasio`);
 
 --
--- Indices de la tabla `galeria`
+-- Indices de la tabla `galeria_entrenador`
 --
-ALTER TABLE `galeria`
+ALTER TABLE `galeria_entrenador`
+  ADD KEY `id_galeria` (`id_galeria`);
+
+--
+-- Indices de la tabla `galeria_gimnasio`
+--
+ALTER TABLE `galeria_gimnasio`
+  ADD KEY `id_galeria` (`id_galeria`);
+
+--
+-- Indices de la tabla `galeria_parque`
+--
+ALTER TABLE `galeria_parque`
   ADD KEY `id_galeria` (`id_galeria`);
 
 --
@@ -416,6 +552,12 @@ ALTER TABLE `gimnasio_entrenadores`
 ALTER TABLE `gimnasio_servicio`
   ADD KEY `id_gimnasio` (`id_gimnasio`),
   ADD KEY `id_servicio` (`id_servicio`);
+
+--
+-- Indices de la tabla `parque`
+--
+ALTER TABLE `parque`
+  ADD PRIMARY KEY (`id_parque`);
 
 --
 -- Indices de la tabla `profesion`
@@ -440,10 +582,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- AUTO_INCREMENT de la tabla `caracterisitcas`
+--
+ALTER TABLE `caracterisitcas`
+  MODIFY `id_caracteristicas` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT de la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
   MODIFY `id_comentario` int(3) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `comentarios_entrenador`
+--
+ALTER TABLE `comentarios_entrenador`
+  MODIFY `id_comentario` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `entrenadores`
@@ -456,6 +610,12 @@ ALTER TABLE `entrenadores`
 --
 ALTER TABLE `gimnasio`
   MODIFY `id_gimnasio` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `parque`
+--
+ALTER TABLE `parque`
+  MODIFY `id_parque` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT de la tabla `profesion`
@@ -480,10 +640,22 @@ ALTER TABLE `usuarios`
 --
 
 --
+-- Filtros para la tabla `caracterisitcas`
+--
+ALTER TABLE `caracterisitcas`
+  ADD CONSTRAINT `caracterisitcas_ibfk_1` FOREIGN KEY (`id_caracteristicas`) REFERENCES `gimnasio` (`id_gimnasio`);
+
+--
 -- Filtros para la tabla `comentarios`
 --
 ALTER TABLE `comentarios`
   ADD CONSTRAINT `comentarios_ibfk_1` FOREIGN KEY (`id_comentario`) REFERENCES `gimnasio` (`id_gimnasio`);
+
+--
+-- Filtros para la tabla `comentarios_entrenador`
+--
+ALTER TABLE `comentarios_entrenador`
+  ADD CONSTRAINT `comentarios_entrenador_ibfk_1` FOREIGN KEY (`id_comentario`) REFERENCES `entrenadores` (`id_entrenadores`);
 
 --
 -- Filtros para la tabla `entrenadores_profesion`
@@ -507,10 +679,22 @@ ALTER TABLE `envio_informacion`
   ADD CONSTRAINT `envio_informacion_ibfk_2` FOREIGN KEY (`id_gimnasio`) REFERENCES `gimnasio` (`id_gimnasio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
--- Filtros para la tabla `galeria`
+-- Filtros para la tabla `galeria_entrenador`
 --
-ALTER TABLE `galeria`
-  ADD CONSTRAINT `galeria_ibfk_1` FOREIGN KEY (`id_galeria`) REFERENCES `entrenadores` (`id_entrenadores`);
+ALTER TABLE `galeria_entrenador`
+  ADD CONSTRAINT `galeria_entrenador_ibfk_1` FOREIGN KEY (`id_galeria`) REFERENCES `entrenadores` (`id_entrenadores`);
+
+--
+-- Filtros para la tabla `galeria_gimnasio`
+--
+ALTER TABLE `galeria_gimnasio`
+  ADD CONSTRAINT `galeria_gimnasio_ibfk_1` FOREIGN KEY (`id_galeria`) REFERENCES `gimnasio` (`id_gimnasio`);
+
+--
+-- Filtros para la tabla `galeria_parque`
+--
+ALTER TABLE `galeria_parque`
+  ADD CONSTRAINT `galeria_parque_ibfk_1` FOREIGN KEY (`id_galeria`) REFERENCES `parque` (`id_parque`);
 
 --
 -- Filtros para la tabla `gimnasio_entrenadores`
