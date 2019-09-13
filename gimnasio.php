@@ -38,7 +38,7 @@
     <!-- CUSTOM STYLE -->
     <link href="css/custom.css" rel="stylesheet" type="text/css">
 
-
+    <link href="css/starrr.css" rel=stylesheet>
 
     <!-- FIN DE ARCHIVOS CSS-->
 
@@ -494,7 +494,40 @@
                 </div>
             </div>
         </div>
-    <!-- FIN DE LA GALERIA>
+    <!-- FIN DE LA GALERIA>-->
+        <div class="about-top-outer">
+            <div class="container">
+                <div class="head border">
+                    <h3><span style="color: #00b3ed">DA UN CALIFICACIÓN</span></h3>
+                </div>
+                <div class="rows">
+                    <form method="POST">
+                    <div class="container">
+                        <p class="clasificacion">
+                          <input id="radio1" type="radio" name="estrellas" value="5">
+                          <label for="radio1">★</label>
+                          <input id="radio2" type="radio" name="estrellas" value="4">
+                          <label for="radio2">★</label>
+                          <input id="radio3" type="radio" name="estrellas" value="3">
+                          <label for="radio3">★</label>
+                          <input id="radio4" type="radio" name="estrellas" value="2">
+                          <label for="radio4">★</label>
+                          <input id="radio5" type="radio" name="estrellas" value="1">
+                          <label for="radio5">★</label>
+                        </p>
+                        <input type="submit" name="clasificacion" class="btn">
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <?php
+             if (isset($_POST['estrellas'])) {
+                $estrellas = $_POST['estrellas'];
+                include 'estrellas\estrellas.php';
+                guardar_estrellas($estrellas);
+             }
+        ?>
     <!--COMENTARIOS-->
     <div class="about-top-outer">
         <div class="container">
@@ -565,12 +598,12 @@
                             $consulta = "INSERT INTO comentarios (id_comentario, primer_nombre, segundo_nombre, telefono,correo,mensaje,fecha,hora) VALUES ('$id','$primer_nombre','$segundo_nombre','$telefono','$correo','$comentario','$fecha','$hora');";
                             $result = mysqli_query($conexion, $consulta);
 
-                            include 'correo_comentario\enviar_comen.php';
+                            include 'comentario_gym\enviar_comen.php';
                             /*Configuracion de variables para enviar el correo*/
                             $mail_username = "acaciasgyms@gmail.com"; //Correo electronico saliente ejemplo: tucorreo@gmail.com
                             $mail_userpassword = "3112031849"; //Tu contraseña de gmail
                             $mail_addAddress = "$correo"; //correo electronico que recibira el mensaje
-                            $template = "correo_comentario\correo_comentario.php"; //Ruta de la plantilla HTML para enviar nuestro mensaje
+                            $template = "comentario_gym\correo_comentario.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
 
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
                             $mail_setFromEmail = "AcaciasGym@gmail.com";
@@ -598,7 +631,7 @@
                             $come = mysqli_query($conexion, $comentarios);
                             while ($cm = mysqli_fetch_array($come, MYSQLI_BOTH)) {
                                 echo "<li class='col-sm-12 clearfix'>
-                                <div class='com-img'><img src='images/coment-img1.png' class='img-circle'>
+                                <div class='com-img'><img src='img/user.png' class='img-circle'>
                                 </div>
                                 <div class='com-txt'>
                                     <h3>" . $cm['primer_nombre'] . " " . $cm['segundo_nombre'] . "<span>Fecha: " . $cm['fecha'] . " Hr: " . $cm['hora'] . "</span></h3>
@@ -639,23 +672,8 @@
     <script src="assets/counterup/waypoints.min.js"></script>
     <!-- CUSTOM JS -->
     <script src="js/custom.js"></script>
+        <script src="js/starrr.js"></script>
     <!-- FIN DE ARCHIVOS JS-->
 </body>
 
 </html>
-<script>
-    function iniciarMap() {
-        var coord = {
-            lat: 3.987078,
-            lng: -73.765383
-        };
-        var map = new google.maps.Map(document.getElementById('map'), {
-            zoom: 10,
-            center: coord
-        });
-        var marker = new google.maps.Marker({
-            position: coord,
-            map: map
-        });
-    }
-</script>

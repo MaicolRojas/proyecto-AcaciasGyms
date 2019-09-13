@@ -256,12 +256,12 @@
                             $consulta = "INSERT INTO comentarios_entrenador (id_comentario, primer_nombre, segundo_nombre, telefono,correo,mensaje,fecha,hora) VALUES ('$id','$primer_nombre','$segundo_nombre','$telefono','$correo','$comentario','$fecha','$hora');";
                             $result = mysqli_query($conexion, $consulta);
 
-                            include 'comentario_gym\enviar_comen.php';
+                            include 'comentario_entrenador\enviar_comen.php';
                             /*Configuracion de variables para enviar el correo*/
                             $mail_username = "acaciasgyms@gmail.com"; //Correo electronico saliente ejemplo: tucorreo@gmail.com
                             $mail_userpassword = "3112031849"; //Tu contraseña de gmail
                             $mail_addAddress = "$correo"; //correo electronico que recibira el mensaje
-                            $template = "comentario_gym\correo_comentario.php"; //Ruta de la plantilla HTML para enviar nuestro mensaje
+                            $template = "comentario_entrenador\correo_comentario.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
 
                             /*Inicio captura de datos enviados por $_POST para enviar el correo */
                             $mail_setFromEmail = "AcaciasGym@gmail.com";
@@ -289,7 +289,7 @@
                             $come = mysqli_query($conexion, $comentarios);
                             while ($cm = mysqli_fetch_array($come, MYSQLI_BOTH)) {
                                 echo "<li class='col-sm-12 clearfix'>
-                                <div class='com-img'><img src='images/coment-img1.png' class='img-circle'>
+                                <div class='com-img'><img src='img/user.png' class='img-circle'>
                                 </div>
                                 <div class='com-txt'>
                                     <h3>" . $cm['primer_nombre'] . " " . $cm['segundo_nombre'] . "<span>Fecha: " . $cm['fecha'] . " Hr: " . $cm['hora'] . "</span></h3>

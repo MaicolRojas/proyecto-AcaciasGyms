@@ -375,7 +375,7 @@ header.header-small .header_search_outer .icon-search-icon::before {
 	border-bottom: 2px solid transparent;
 }
 header.header-small .navbar-dark .navbar-nav .nav-link {
-	color: #ffffff;
+	color: #000000;
 }
 .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover, header.header-small .navbar-dark .navbar-nav .active > .nav-link, header.header-small .navbar-dark .navbar-nav .nav-link:focus {
 	border-bottom: 2px solid #007bff;
@@ -2391,4 +2391,29 @@ h3, .head h3, .contact-outer h3 {
 }
 .radi{
 	border-radius: 22px;
+}
+
+
+
+p.clasificacion {
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+   font-size: 30px; 
+}
+
+p.clasificacion input {
+  position: absolute;
+  top: -100px;
+}
+
+p.clasificacion label {
+  float: right;
+  color: #333;
+}
+
+p.clasificacion label:hover,
+p.clasificacion label:hover ~ label,
+p.clasificacion input:checked ~ label {
+  color: #dd4;
 }

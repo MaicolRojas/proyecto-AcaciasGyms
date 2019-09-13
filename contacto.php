@@ -52,14 +52,14 @@
                 <h2 class="sub-head-w3-agileits" >CONTACTO</h2>
                 <p style="text-align: justify;">Si tienes una duda, inquietud, sugerencias o si deseas que tu gimnasio sea añadido a nuestro portal web completa el formulario de contacto y lo más pronto posible obtendrás una respuesta, muchas gracias por visitar AcaciasGym.</p>
                 <div class="login-form">    
-                <form action="#" method="post">
+                <form method="post">
                     <input type="text" name="nombre" placeholder="Nombres" required="" />
                     <input type="text" name="apellido" placeholder="Apellidos" required="" />
                     <input type="email" name="correo" placeholder="Correo" required="" />
-                    <input type="number" name="telefono" placeholder="Telefono" required="" max="10" />
+                    <input type="number" name="telefono" placeholder="Telefono" required="" />
                     <input type="text" name="tema" placeholder="Tema" required="" />
-                    <textarea name="Mensaje" placeholder="Mensaje" required=""></textarea>
-                    <input type="submit" value="Enviar">
+                    <textarea name="mensaje" placeholder="Mensaje" required=""></textarea>
+                    <input type="submit" value="Enviar" name="enviar">
                 </form> 
             </div>
             </div>          
@@ -73,6 +73,38 @@
             <!--//login-->
             <br>
             <br>
+            <?php
+
+                    if (isset($_POST['enviar'])) {
+                        try {
+                            $primer_nombre = $_POST['nombre'];
+                            $segundo_nombre = $_POST['apellido'];
+                            $telefono = $_POST['telefono'];
+                            $correo = $_POST['correo'];
+                            $tema = $_POST['tema'];
+                            $comentario = $_POST['mensaje'];
+                            date_default_timezone_set('America/Bogota');
+                            $fecha = date("Y-m-d");
+                            $hora = date("h:i a");
+                            
+                            include 'correo_contacto\enviar_comen.php';
+                            /*Configuracion de variables para enviar el correo*/
+                            $mail_username = "acaciasgyms@gmail.com"; //Correo electronico saliente ejemplo: tucorreo@gmail.com
+                            $mail_userpassword = "3112031849"; //Tu contraseña de gmail
+                            $mail_addAddress = "$correo"; //correo electronico que recibira el mensaje
+                            $template = "correo_contacto\correo_comentario.html"; //Ruta de la plantilla HTML para enviar nuestro mensaje
+
+                            /*Inicio captura de datos enviados por $_POST para enviar el correo */
+                            $mail_setFromEmail = "AcaciasGym@gmail.com";
+                            $mail_setFromName = "AcaciasGym";
+
+                            email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $tema, $comentario); //Enviar el mensaje
+
+                        } catch (Exception $e) {
+                            echo $e;
+                        }
+                    }
+                    ?>
  <?php
  include "footer.php";
  ?>

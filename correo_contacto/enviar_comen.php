@@ -5,7 +5,7 @@
 	<script src="alertifyjs/alertify.js"></script>
 </head>
 <?php
-function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$primer_nombre,$segundo_nombre,$telefono,$correo,$comentario,$id,$nombre_gym)
+function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$primer_nombre,$segundo_nombre,$telefono,$correo,$tema,$comentario)
 {
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer;
@@ -23,12 +23,12 @@ function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $m
 	$mail->addAddress($mail_addAddress);   // Agregar quien recibe el e-mail enviado
 	$message = file_get_contents($template);
 
-	$message = str_replace('{{id}}', $id, $message);
+
 	
-	$message = str_replace('{{nombre_gimnasio}}', $nombre_gym, $message);
 	$message = str_replace('{{nombre}}', $primer_nombre, $message);
 	$message = str_replace('{{apellido}}', $segundo_nombre, $message);
 	$message = str_replace('{{telefono}}', $telefono, $message);
+	$message = str_replace('{{tema}}', $tema, $message);
 	$message = str_replace('{{correo}}', $correo, $message);
 	$message = str_replace('{{mensaje}}', $comentario, $message);
 	date_default_timezone_set('America/Bogota');
@@ -37,7 +37,7 @@ function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $m
 	$message = str_replace('{{fecha}}', $fecha, $message);
 	$message = str_replace('{{hora}}', $hora, $message);
 	$mail->isHTML(true);  // Establecer el formato de correo electrónico en HTML
-	$mail->Subject = "¡Has recibido un nuevo comentario!";
+	$mail->Subject = "¡Has recibido un nuevo comentario de contacto!";
 	$mail->CharSet = "UTF-8";
 	$mail->SetFrom('mi correo', $nombre2);
 	$mail->msgHTML($message);

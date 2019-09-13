@@ -5,7 +5,7 @@
 	<script src="alertifyjs/alertify.js"></script>
 </head>
 <?php
-function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$primer_nombre,$segundo_nombre,$telefono,$correo,$comentario,$id,$nombre_gym)
+function email_gym($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$primer_nombre,$segundo_nombre,$telefono,$correo,$comentario,$id,$correo_entrenador,$nombre_entrenador, $apellido_etrenador)
 {
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer;
@@ -24,8 +24,9 @@ function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $m
 	$message = file_get_contents($template);
 
 	$message = str_replace('{{id}}', $id, $message);
-	/*
-	$message = str_replace('{{nombre_gimnasio}}', $nombre_gym, $message);
+	
+	$message = str_replace('{{nombre_entrenador}}', $nombre_entrenador, $message);
+	$message = str_replace('{{apellido_entrenador}}', $apellido_etrenador, $message);
 	$message = str_replace('{{nombre}}', $primer_nombre, $message);
 	$message = str_replace('{{apellido}}', $segundo_nombre, $message);
 	$message = str_replace('{{telefono}}', $telefono, $message);
@@ -35,9 +36,9 @@ function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $m
 	$fecha = date("d-m-Y");
 	$hora = date("h:i a");
 	$message = str_replace('{{fecha}}', $fecha, $message);
-	$message = str_replace('{{hora}}', $hora, $message);*/
+	$message = str_replace('{{hora}}', $hora, $message);
 	$mail->isHTML(true);  // Establecer el formato de correo electrónico en HTML
-	$mail->Subject = "¡Estas Suscrito en AcaciasGym!";
+	$mail->Subject = "¡Has recibido un nuevo comentario!";
 	$mail->CharSet = "UTF-8";
 	$mail->SetFrom('mi correo', $nombre2);
 	$mail->msgHTML($message);

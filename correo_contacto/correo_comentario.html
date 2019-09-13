@@ -1,0 +1,192 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Demystifying Email Design</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<style type="text/css">
+
+.comments-wrapper h3, .news-left .form-wrapper h3 {
+	font-size: 22px;
+	text-transform: uppercase
+}
+.comments-wrapper ul.comments {
+	display: block;
+	padding: 20px 0 0 0;
+}
+.comments-wrapper ul.comments li {
+	margin-bottom: 30px;
+}
+.comments-wrapper ul.comments li .com-img {
+	width: 68px;
+	height: 68px;
+	float: left;
+}
+.comments-wrapper ul.comments li .com-img img {
+	border-radius: 100%;
+}
+.comments-wrapper ul.comments li .com-txt {
+	width: calc(100% - 92px);
+	padding: 30px 20px 30px 20px;
+	float: right;
+	background: #f1f1f1;
+	position: relative;
+}
+.comments-wrapper ul.comments li .com-txt:after, .comments-wrapper ul.comments li .com-txt:before {
+	right: 100%;
+	top: 30px;
+	border: solid transparent;
+	content: " ";
+	height: 0;
+	width: 0;
+	position: absolute;
+}
+.comments-wrapper ul.comments li .com-txt:after {
+	border-color: rgba(243, 246, 248, 0);
+	border-right-color: #f1f1f1;
+	border-width: 8px;
+	margin-top: -8px;
+}
+.comments-wrapper ul.comments li .com-txt:before {
+	border-color: rgba(209, 218, 223, 0);
+	border-right-color: #f1f1f1;
+	border-width: 9px;
+	margin-top: -9px;
+}
+.comments-wrapper ul.comments li .com-txt h3 {
+	display: block;
+	font-weight: normal;
+	padding-bottom: 13px;
+	font-size: 20px;
+}
+.comments-wrapper ul.comments li .com-txt h3 span {
+	padding-left: 10px;
+	font-size: 14px;
+}
+.comments-wrapper ul.comments li .com-txt p {
+	padding-bottom: 10px;
+	line-height: 20px;
+	color: #757575
+}
+.comments-wrapper ul.comments li .com-txt a {
+	font-size: 16px;
+	color: #3c3c3c;
+}
+.comments-wrapper ul.comments li .com-txt a span {
+	display: inline-block;
+	vertical-align: middle;
+	padding-right: 6px;
+	font-size: 16px;
+	opacity: 0.5;
+	transition: all 0.3s ease 0s;
+}
+.comments-wrapper ul.comments li .com-txt a:hover {
+	color: #fb9221;
+}
+.news-left .form-wrapper h3 {
+	margin-bottom: 30px;
+}
+ */:root{--blue:#007bff;--indigo:#6610f2;--purple:#6f42c1;--pink:#e83e8c;--red:#dc3545;--orange:#fd7e14;--yellow:#ffc107;--green:#28a745;--teal:#20c997;--cyan:#17a2b8;--white:#fff;--gray:#6c757d;--gray-dark:#343a40;--primary:#007bff;--secondary:#6c757d;--success:#28a745;--info:#17a2b8;--warning:#ffc107;--danger:#dc3545;--light:#f8f9fa;--dark:#343a40;--breakpoint-xs:0;--breakpoint-sm:576px;--breakpoint-md:768px;--breakpoint-lg:992px;--breakpoint-xl:1200px;--font-family-sans-serif:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";--font-family-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace}*,::after,::before{box-sizing:border-box}html{font-family:sans-serif;line-height:1.15;-webkit-text-size-adjust:100%;-ms-text-size-adjust:100%;-ms-overflow-style:scrollbar;-webkit-tap-highlight-color:transparent}@-ms-viewport{width:device-width}article,aside,figcaption,figure,footer,header,hgroup,main,nav,section{display:block}body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";font-size:1rem;font-weight:400;line-height:1.5;color:#212529;text-align:left;background-color:#fff}[tabindex="-1"]:focus{outline:0!important}hr{box-sizing:content-box;height:0;overflow:visible}h1,h2,h3,h4,h5,h6{margin-top:0;margin-bottom:.5rem}p{margin-top:0;margin-bottom:1rem}abbr[data-original-title];
+</style>
+
+</head>
+<body style="margin: 0; padding: 0;">
+	<table border="0" cellpadding="0" cellspacing="0" width="100%">	
+		<tr>
+			<td style="padding: 10px 0 30px 0;">
+				<table align="center" border="0" cellpadding="0" cellspacing="0" width="600" style="border: 1px solid #cccccc; border-collapse: collapse;">
+					<tr>
+						<td align="center" bgcolor="#70bbd9" style="padding: 40px 0 30px 0; color: #153643; font-size: 28px; font-weight: bold; font-family: Arial, sans-serif;">
+							<img src="https://i.ibb.co/mcrGyg9/h1.gif" alt="Creating Email Magic" width="300" height="230" style="display: block;" />
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#ffffff" style="padding: 40px 30px 40px 30px;">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr>
+									<td style="color: #153643; font-family: Arial, sans-serif; font-size: 24px; text-align: center;">
+										<b>¡Has recibido un nuevo comentario de Contacto!</b>
+									</td>
+								</tr>
+								<tr>
+									
+									<td style="padding: 20px 0 30px 0; color: #153643; font-family: Arial, sans-serif; font-size: 16px; line-height: 20px; text-align: justify;">
+										¡Hola ADMINISTRADOR ! has recibido un nuevo comentario. Léelo para así conocer el mensaje que se te fue enviado. 
+									</td>
+								</tr>
+								<tr>
+									<td>
+										<hr>
+										<div class="comments-wrapper">
+                               		 	
+                                		<ul class="row comments">
+                                    	<li class="col-sm-12 clearfix">
+                                        	
+                                        
+                                            	<h3>{{nombre}} {{apellido}}</h3>
+                                            	<p>{{tema}}</p>
+                                            	<p>{{mensaje}}</p>
+                                            	<p>Telefono: {{telefono}}</p>
+                                            	<p>Correo: {{correo}}</p>
+
+                                            	<p>{{fecha}} {{hora}}</p>
+                                            	
+                                    	</li>
+                                		</ul>
+                            		
+									</td>
+								</tr>
+							</table>
+							<hr>
+							<div class="comments-wrapper">
+                               		 	
+                                		<ul class="row comments" style="text-align: justify;color: #153643; font-family: Arial, sans-serif;font-size: 16px;line-height: 20px;text-align: justify;">
+                                    	
+
+                                    	<span>Este es un mensaje automático generado por el sistema, por lo tanto, por favor no contestar a este, te agradecemos por haber decidido unirte en AcaciasGym y estamos felices de que hallas decidido ser parte de esta comunidad que desea informarse sobre los gimnasios o espacios para hacer ejercicio en el municipio de Acacias – Meta, para mejorar su estilo de vida. </span>
+                                    	
+                                    </ul>
+                                </div>
+							<th>
+						</td>
+					</tr>
+					<tr>
+						<td bgcolor="#00b3ed" style="padding: 30px 30px 30px 30px;">
+							<table border="0" cellpadding="0" cellspacing="0" width="100%">
+								<tr>
+									<td style="color: #ffffff; font-family: Arial, sans-serif; font-size: 14px;" width="75%">
+										<a href="" style="color: #ffffff;"> © Todos los derechos reservados 2019. Plataforma digital <br/></a>
+										<a href="" style="color: #ffffff;"><font color="#ffffff">AcacyasGym</font>
+									</td>
+									<td align="right" width="25%">
+										<table border="0" cellpadding="0" cellspacing="0">
+											<tr>
+												<td style="font-size: 0; line-height: 0;" width="20">&nbsp;</td>
+												<td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
+													<a href="http://www.twitter.com/" style="color: #ffffff;">
+														<img src="https://images.vexels.com/media/users/3/137253/isolated/preview/90dd9f12fdd1eefb8c8976903944c026-icono-de-facebook-logo-by-vexels.png" alt="Facebook" width="38" height="38" style="display: block;" border="0" />
+													</a>
+												</td>
+												<td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
+													<a href="http://www.twitter.com/" style="color: #ffffff;">
+														<img src="http://assets.stickpng.com/thumbs/58e9196deb97430e819064f6.png" alt="Twitter" width="38" height="38" style="display: block;" border="0" />
+													</a>
+												</td>
+												<td style="font-family: Arial, sans-serif; font-size: 12px; font-weight: bold;">
+													<a href="https://www.instagram.com/" style="color: #ffffff;">
+														<img src="https://www.balchspringslibrary.org/instagram.png/@@images/e1c22297-f149-4631-80c3-60ad3ee40884.png" alt="instagram" width="38" height="38" style="display: block;" border="0" />
+													</a>
+												</td>
+											</tr>
+										</table>
+									</td>
+								</tr>
+							</table>
+						</td>
+					</tr>
+				</table>
+			</td>
+		</tr>
+	</table>
+</body>
+</html>
