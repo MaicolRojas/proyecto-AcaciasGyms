@@ -70,8 +70,8 @@
                 <div class="breadcrumbs_outer">
                     <div class="container">
                         <ul class="breadcrumbs">
-                            <li><a href="index.php" style="color: blue">INICIO</a></li>
-                            <li>ENTRENADORES</li>
+                            <li><a href="index.php" style="color:#00b3ed">INICIO</a></li>
+                            <li>Entrenadores</li>
                         </ul>
                     </div>
                 </div>
@@ -96,14 +96,52 @@
                         $resultado = mysqli_query($conexion, $consulta);
                         while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
                             echo "<h3><span >" . $campo['nombre_entrenador'] . " " . $campo['apellido_etrenador'] . "</span></h3>";
+                        }
                             ?>
 
                             <p style="text-align: justify;">El entrenamiento personal está orientado a poner a disposición del cliente toda la tecnología, recursos y tiempo que un profesional cualificado pueda ofrecerle, con la finalidad de alcanzar los mejores resultados en el menor tiempo, y de la forma más efectiva y segura. Este servicio busca la máxima eficiencia en los procesos, la máxima eficacia en los resultados y los mínimos riesgos en lo respectivo a la seguridad.</p>
                             <p style="text-align: justify;">Si el asesoramiento físico se diseña y se sigue de la forma adecuada, se producirá una mejora la condición física de la persona, así como su capacidad cardiaca y respiratoria y su estado general de salud.</p>
+
+                            <?php
+                        $es = "SELECT entrenadores.*, profesion.* FROM entrenadores_profesion INNER JOIN entrenadores ON (entrenadores.id_entrenadores = entrenadores_profesion.id_entrenadores) INNER JOIN profesion ON (profesion.id_profesion = entrenadores_profesion.id_profesion) WHERE entrenadores.id_entrenadores = '$id'";
+                            $rses = mysqli_query($conexion, $es);
+                            echo "<p style='font-weight:bold;'>CARRERAS: </p>";
+                            while ($campo = mysqli_fetch_array($rses, MYSQLI_BOTH)) {
+                                echo "<ul>
+                                <li type='circle' style=''>".$campo['nombre_profesion']."</li>
+                                </ul>";
+                            }
+                        ?>
+
+                            <?php 
+                            $es = "SELECT id_calificacion, SUM(calificacion) AS suma_califaciones, COUNT(*) as total_califaciones FROM calificacion_ent WHERE id_calificacion =   '$id'";
+                            $rses = mysqli_query($conexion, $es);
+                            while ($campo = mysqli_fetch_array($rses, MYSQLI_BOTH)) {
+                               
+                                $total_calificaciones = $campo['total_califaciones'];
+                            
+                                if ($total_calificaciones == 0) {
+                                    echo "<p style='text-align: left;font-weight: bold;'>No hay califaciones por el momento</p>";               
+                                }else{
+                                    $calificacion = $campo['suma_califaciones'];
+                                    $calify = $calificacion / $total_calificaciones; 
+                                     echo "Nm de calificaciones (".$campo['total_califaciones'].")<br>";
+                                    echo "<br>";
+                                    echo " <p class='clasificacion' style='font-weight: bold;'>
+                                    Califiación:   ".round($calify,2)."
+                                    <label style='color:yellow'>★</label>  
+                                    </p>";
+                                }
+                              }
+                            ?>
+
                         </div>
                     </div>
                     <div class="col-sm-5 col-xs-12">
                         <?php
+                         $consulta = "SELECT * FROM entrenadores WHERE id_entrenadores = '$id'";
+                        $resultado = mysqli_query($conexion, $consulta);
+                        while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
                         echo "<figure class='about-top-right'><<img src='".$campo['imagen_entrenador']."'></figure>";
 
                         ?>
@@ -135,7 +173,7 @@
                                 <figure><img class="i" src="img/ico/call.png"></figure>
                                 <p>
                                     <?php
-                                    echo "<a href='tel:+1-123-456-4785'>(+57) " . $campo['telefono_entrenador'] . "</a><br/>";
+                                    echo "<a href='tel:+57".$campo['telefono_entrenador']."'>(+57)' " . $campo['telefono_entrenador'] . "</a><br/>";
                                     ?>
 
                                 </p>
@@ -149,10 +187,46 @@
                                 ?>
                             </div>
                         </div>
+                        
                     </div>
                 </div>
             </div>
         </div>
+        <br>
+         <div class="professional-outer">
+            <center>
+                <h1 style="color: white">!SERVICIOS QUE OFRECE EL ENTRENADOR!</h1>
+            </center>
+        </div>
+        <div class="feature-outer classes-page">
+        <div class="container">
+            <div class="head border">
+
+            </div>
+            <div class="feature-list">
+                <div class="row">
+                    <?php
+                    $sql = "SELECT entrenadores.*, servicio.* FROM entrenadores_servicio INNER JOIN servicio ON (servicio.id_servicio = entrenadores_servicio.id_servicio) INNER JOIN entrenadores ON (entrenadores.id_entrenadores = entrenadores_servicio.id_entrenadores) WHERE entrenadores.id_entrenadores =  '$id' ";
+                    $resul = mysqli_query($conexion, $sql);
+                    while ($res = mysqli_fetch_array($resul, MYSQLI_BOTH)) {
+                        echo "<div class='col-sm-4 col-xs-12'>
+                            <div class='feature-box'>
+                                <figure>
+                                    <img src='" . $res['imagen_servicio'] . "'>
+                                    <div class='time-box'>
+                                        
+                                    </div>
+                                </figure>
+                                <h4>" . $res['tipo_de_servicio'] . "</h4>
+                                <p style='text-align:justify'>" . substr($res['descripcion_servicio'], 0, 1000) . " .  .  .  .</p>   
+                            </div>
+                        </div>";
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
         <br>
         <div class="professional-outer">
             <center>
@@ -172,18 +246,63 @@
                     <div class="row grid">
                     <?php
                     }
-                    $consulta2 = "SELECT * FROM galeria_entrenador WHERE id_galeria = '$id'";
+                    $consulta2 = "SELECT COUNT(*) as Cantidad FROM galeria_entrenador WHERE id_galeria = '$id'";
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
-                        echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
+                        $cantidad_f = $campo['Cantidad'];
+                    }
+                    if ($cantidad_f > 0) {
+                        $consulta2 = "SELECT * FROM galeria_entrenador WHERE id_galeria = '$id'";
+                        $resultado2 = mysqli_query($conexion, $consulta2);
+                        while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
+                             echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
                         <div class='gallery-box'><figure><img src='".$campo['imagen']."'></figure>
                         <a href='".$campo['imagen']."' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
+                        }
+                    }else{
+                        echo "<p>No hay imganes que mostrar por el momento</p>";
                     }
                     ?>
                 </div>
             </div>
-        </div>
+        </div></div>
         <!--FIN DE LA GALERIA-->
+        <!--CALIFICACIÓN-->
+        <div class="about-top-outer">
+            <div class="container">
+                <div class="head border">
+                    <h3><span style="color: #00b3ed">DA UN CALIFICACIÓN</span></h3>
+                </div>
+                <div class="rows">
+                    <form method="POST">
+                        <div class="container">
+                            <p class="clasificacion">
+                                <input id="radio1" type="submit" name="estrellas" value="5">
+                                <label for="radio1">★</label>
+                                <input id="radio2" type="submit" name="estrellas" value="4">
+                                <label for="radio2">★</label>
+                                <input id="radio3" type="submit" name="estrellas" value="3">
+                                <label for="radio3">★</label>
+                                <input id="radio4" type="submit" name="estrellas" value="2">
+                                <label for="radio4">★</label>
+                                <input id="radio5" type="submit" name="estrellas" value="1">
+                                <label for="radio5">★</label>
+                            </p>
+                           
+                    </form>
+                </div>
+                <p></p>
+            </div>
+        </div>
+    </div>
+    <!--CALIFICACIÓN-->
+    <?php
+    if (isset($_POST['estrellas'])) {
+        $estrellas = $_POST['estrellas'];
+        include 'estrellas\estrellas.php';
+        guardar_estrellas_entrenadores($id,$estrellas);
+    }
+    ?>
         <!--COMENTARIO-->
          <div class="about-top-outer">
         <div class="container">
@@ -267,7 +386,7 @@
                             $mail_setFromEmail = "AcaciasGym@gmail.com";
                             $mail_setFromName = "AcaciasGym";
 
-                            email_gym($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $comentario, $id, $correo_entrenador,$nombre_entrenador, $apellido_etrenador); //Enviar el mensaje
+                            email_ent($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $comentario, $id, $correo_entrenador,$nombre_entrenador, $apellido_etrenador,$url); //Enviar el mensaje
 
                         } catch (Exception $e) {
                             echo $e;

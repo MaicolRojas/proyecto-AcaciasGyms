@@ -3,7 +3,7 @@
     <!-- INICIO DEL CONTENEDOR -->
     <div class="container header-sec">
         <div class="row">
-            <span class="col-xs-12 col-sm-3 logo"><a href="index-2.html"><img class="main" src="img/logo.png" alt="ACA-GYM"><img class="fix" src="img/logo.png" alt="ACA_GYM"></a></span>
+            <span class="col-xs-12 col-sm-3 logo"><a href="index.php"><img class="main" src="img/img.png" alt="ACA-GYM"><img class="fix" src="img/img.png" alt="ACA_GYM"></a></span>
             <div class="col-xs-12 col-sm-9 header-right">
                 <!--LOGOS DEL HEADER-->
                 <div class="header_search_outer">
@@ -13,7 +13,6 @@
                     <!--BARRA DE BUSQUEDA-->
                 </div>
                 <!-- FIN DEL CONTENEDOR -->
-
                 <!--INICIO DE BARRA DE PAGINAS-->
                 <nav class="navbar navbar-expand-md navbar-dark navbar-custom">
                     <!--INICIOS DEL NAVBAR-->
@@ -23,7 +22,7 @@
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.php">Inicio</a>
+                                <a class="nav-link" href="index.php" class="letra">Inicio</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="noticias.php">Noticias</a>

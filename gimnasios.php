@@ -34,9 +34,8 @@
     <link href="assets/aos/aos.css" rel="stylesheet" type="text/css">
     <!-- CUSTOM STYLE -->
     <link href="css/custom.css" rel="stylesheet" type="text/css">
-
-
-
+     <!--ESTRELLAS-->
+    <link href="css/starrr.css" rel=stylesheet>
     <!-- FIN DE ARCHIVOS CSS-->
 
 </head>
@@ -86,7 +85,7 @@
                         //echo $campo['Nombre_entrenador'];
                         echo "<div class='col-sm-4 col-xs-10'>
                             <div class='trainers-box'>
-                                <a href='gimnasio.php?".$campo['id_gimnasio']."'><figure><img style ='width:500px; height:220px; border-radius:2%;' src='".$campo['imagen_gimnasio']."'></a></figure>
+                                <a href='gimnasio.php?".$campo['id_gimnasio']."'><figure><img style ='border-radius:2%;width:500px; height:220px;' src='".$campo['imagen_gimnasio']."'></a></figure>
                                 <a href='gimnasio.php?".$campo['id_gimnasio'] . "' style='color:black'><br><span class='btn' style=' font-family: poppins;background: #00b3ed; color:white;border:#ced4da;'>" . $campo['nombre_gimnasio'] ."<br></span></a>
                             </div>
                         </div>";
@@ -96,6 +95,7 @@
                 </div>
             </div>
         </div>
+    </div>
 
         <?php
         include("footer.php");

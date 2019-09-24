@@ -41,6 +41,51 @@
 <body>
 <?php
 include 'header.php';
+?>
+    <div id="loading" style="background-color:#070d38">
+        <div class="element">
+            <div class="sk-folding-cube">
+                <div class="sk-cube1 sk-cube"></div>
+                <div class="sk-cube2 sk-cube"></div>
+                <div class="sk-cube4 sk-cube"></div>
+                <div class="sk-cube3 sk-cube"></div>
+            </div>
+        </div>
+    </div>
+    <br><br><br>
+ <div class="news-outer">
+            <div class="container">
+                <div class="head">
+                    <center><h3>LATEST NEWS</h3></center>
+                </div>
+                <div class="news-list">
+                    <div class="row">
+                        <?php 
+                        $es = "SELECT * FROM noticias";
+                        $rses = mysqli_query($conexion, $es);
+                        while ($campo = mysqli_fetch_array($rses, MYSQLI_BOTH)) {
+
+                            echo "<div class='col-sm-4 col-xs-12'>
+                            <div class='news-box'>
+                                <figure><img src='".$campo['imagenes']."' alt=''>
+                                    <div class='date-box'>
+                                        <span>".$campo['fecha']."</span>
+                                        
+                                    </div>
+                                </figure>
+                                <h4>".$campo['nombre']."</h4>
+                                <p style='text-align: justify;''>".$campo['descripcion']." <a href='news-detail.html'>Más Detalles...</a></p>
+                            </div>
+                        </div>";
+
+                        }
+                        ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+<?php
 include 'footer.php';
 ?>
 
