@@ -57,16 +57,16 @@
     include 'header.php';
     ?>
     <!-- INICIO DEL BANNER -->
-    <div class="banner-outer inner-banner trainers-banner" style="background: url(img/banner/Banner-park.jpg) no-repeat center top / cover;">
+    <div class="banner-outer inner-banner trainers-banner" style="background: url(img/banner/banner1a.jpg) no-repeat center top / cover;">
         <span class="banner-shadow"></span>
         <div class="container">
             <div class="content">
-                <h1>Parques</h1>
+                <h1>Gimnasios</h1>
                 <div class="breadcrumbs_outer">
                     <div class="container">
                         <ul class="breadcrumbs">
                             <li><a href="index.php" style="color: #00b3ed">INICIO</a></li>
-                            <li>Parques</li>
+                            <li>Gimnasios</li>
                         </ul>
                     </div>
                 </div>
@@ -96,7 +96,7 @@
                 </div>
             </div>
         </div>
-    </div>
+
         <?php
         include("footer.php");
         ?>

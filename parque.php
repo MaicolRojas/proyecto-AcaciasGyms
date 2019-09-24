@@ -65,7 +65,7 @@
     ?>
 
     <!-- INICIO DEL BANNER -->
-    <div class="banner-outer inner-banner  about-us-banner" style="background: url(img/banner/Banner-park2.jpg)no-repeat center top / cover;">
+    <div class="banner-outer inner-banner  about-us-banner">
         <span class="banner-shadow"></span>
         <div class="container">
             <div class="content" data-aos="fade-down">
@@ -88,7 +88,7 @@
                     <div class="breadcrumbs_outer">
                         <div class="container">
                             <ul class="breadcrumbs">
-                                <li><a href="index.php" style="color: #00b3ed">Inicio</a></li>
+                                <li><a href="index.php" style="color: white">Inicio</a></li>
                                 <li>Parques</li>
                             </ul>
                         </div>
@@ -211,28 +211,17 @@
                 <div class="gallery-list">
                     <div class="row grid">
                     <?php
-                    $consulta2 = "SELECT COUNT(*) as cantidad FROM galeria_parque WHERE id_galeria = '$id'";
+                    $consulta2 = "SELECT * FROM galeria_parque WHERE id_galeria = '$id'";
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
-                        $cantidad = $campo['cantidad'];
-                    }
-                    if ($cantidad>0) {
-                       $consulta2 = "SELECT * FROM galeria_parque WHERE id_galeria = '$id'";
-                        $resultado2 = mysqli_query($conexion, $consulta2);
-                        while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
                         <div class='gallery-box'><figure><img src='".$campo['imagen']."'></figure>
                         <a href='".$campo['imagen']."' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
-                        }
-                    }else{
-                        echo "<p>No hay imagenes por el momento</p>";
                     }
                     ?>
                 </div>
             </div>
         </div>
-    </div>
-    
     <!-- FIN DE LA GALERIA>
 
     <!--FIN DE COMENTARIOS-->

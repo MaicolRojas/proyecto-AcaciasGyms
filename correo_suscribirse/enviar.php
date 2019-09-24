@@ -10,7 +10,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/ !-->
 	<script src="alertifyjs/alertify.js"></script>
 </head>
 <?php
-function sendemail($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$url)
+function sendemail($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template)
 {
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer;
@@ -50,24 +50,20 @@ function sendemail($mail_username, $mail_userpassword, $mail_setFromEmail, $mail
 		$resultado = mysqli_query($conexion, $consulta);
 		if (mysqli_num_rows($resultado) > 0) {
 			echo "<script language='JavaScript'>";
-			echo "alertify.alert('<center>El correo ya se encuentra suscrito.<br> Intenta con otro en algunos segundo</center>');";
+			echo "alertify.alert('El correo ya se encuentra suscrito.');";
 			echo "</script>";
-			echo "<meta http-equiv='Refresh' content='4;url=".$url."'>";
 		} else {
 			if (!$mail->send()) {
 				echo "<script language='JavaScript'>";
 				echo "alertify.alert('Hubo un error. intenta mas tarde.');";
 				echo "</script>";
-				echo "<meta http-equiv='Refresh' content='4;url=".$url."'>";
 				echo 'Error de correo: ' . $mail->ErrorInfo . "</p>";
 			} else {
 				echo "<script language='JavaScript'>";
-				echo "alertify.alert('Se te ha enviado un correo de suscripcíon<br> En algunos segundos llegara :D');";
+				echo "alertify.alert('Se te ha enviado un correo de suscripcíon');";
 				echo "</script>";
-				echo "<meta http-equiv='Refresh' content='4;url=".$url."'>";
 				$consulta2 = "INSERT INTO correos_personas(correo) VALUES ('$mail_addAddress');";
 				$resultado2 = mysqli_query($conexion, $consulta2);
-				
 			}
 		}
 	} catch (Exception $e) {

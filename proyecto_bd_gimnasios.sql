@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2019 a las 18:49:42
+-- Tiempo de generación: 03-09-2019 a las 17:02:29
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -25,49 +25,10 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `calificacion_ent`
+-- Estructura de tabla para la tabla `caracterisitcas`
 --
 
-CREATE TABLE `calificacion_ent` (
-  `id_calificacion` int(3) DEFAULT NULL,
-  `calificacion` int(1) DEFAULT NULL
-) ;
-
---
--- Volcado de datos para la tabla `calificacion_ent`
---
-
-INSERT INTO `calificacion_ent` (`id_calificacion`, `calificacion`) VALUES
-(2, 3),
-(5, 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `calificacion_gym`
---
-
-CREATE TABLE `calificacion_gym` (
-  `id_calificacion` int(3) DEFAULT NULL,
-  `calificacion` int(1) DEFAULT NULL
-) ;
-
---
--- Volcado de datos para la tabla `calificacion_gym`
---
-
-INSERT INTO `calificacion_gym` (`id_calificacion`, `calificacion`) VALUES
-(1, 4),
-(1, 2),
-(1, 1);
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `caracteristicas`
---
-
-CREATE TABLE `caracteristicas` (
+CREATE TABLE `caracterisitcas` (
   `id_caracteristicas` int(3) NOT NULL,
   `entrenadores` int(3) NOT NULL,
   `clientes_satisfechos` int(3) NOT NULL,
@@ -76,10 +37,10 @@ CREATE TABLE `caracteristicas` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Volcado de datos para la tabla `caracteristicas`
+-- Volcado de datos para la tabla `caracterisitcas`
 --
 
-INSERT INTO `caracteristicas` (`id_caracteristicas`, `entrenadores`, `clientes_satisfechos`, `premios_recibidos`, `equipamentos`) VALUES
+INSERT INTO `caracterisitcas` (`id_caracteristicas`, `entrenadores`, `clientes_satisfechos`, `premios_recibidos`, `equipamentos`) VALUES
 (1, 2, 100, 5, 30),
 (2, 1, 50, 2, 25),
 (3, 2, 70, 3, 35);
@@ -118,6 +79,13 @@ CREATE TABLE `comentarios_entrenador` (
   `hora` time NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `comentarios_entrenador`
+--
+
+INSERT INTO `comentarios_entrenador` (`id_comentario`, `primer_nombre`, `segundo_nombre`, `telefono`, `correo`, `mensaje`, `fecha`, `hora`) VALUES
+(1, 'Maicol', 'Rojas', '3112031849', 'maicolandreyrojas@gmail.com', 'as', '2019-08-27', '06:42:00');
+
 -- --------------------------------------------------------
 
 --
@@ -133,7 +101,8 @@ CREATE TABLE `correos_personas` (
 --
 
 INSERT INTO `correos_personas` (`correo`) VALUES
-('maicolandreyrojas@gmail.com');
+('maicolandreyrojas@gmail.com'),
+('elvergalarga1955@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -158,11 +127,11 @@ CREATE TABLE `entrenadores` (
 --
 
 INSERT INTO `entrenadores` (`id_entrenadores`, `nombre_entrenador`, `apellido_etrenador`, `documento_entrenador`, `edad_entrenador`, `genero_entrenador`, `telefono_entrenador`, `correo_entrenador`, `imagen_entrenador`) VALUES
-(1, 'Jairo', 'Gárces', '70241749', '51', 'M', '3124030410', 'formagymjairo@hotmail.com', 'img/Entrenadores/Entrenador 1.jpg'),
-(2, 'Mauricio', 'Molano', '1122129895', '26', 'M', '3105689590', 'formagymjairo@hotmail.com', 'img/Entrenadores/Entrenador 2.jpg'),
+(1, 'Jairo', 'Gárces', '70241749', '51', 'M', '3124030410', 'formagymjairo@hotmail.com', 'img/Entrenadores/trainer 1.png'),
+(2, 'Mauricio', 'Molano', '1122129895', '26', 'M', '3105689590', 'formagymjairo@hotmail.com', 'img/Entrenadores/trainer 2.png'),
 (3, 'Jose', 'Hernández', '18110853', '50', 'M', '3222344869', 'dinamiccenter@gmail.com', 'img/Entrenadores/trainer 3.png'),
-(4, 'Grierson', 'Gutiérrez', 'por asignar', '29', 'M', '3107675475', 'sainthordeacacias@gmail.com', 'img/Entrenadores/Entrenador 4.png'),
-(5, 'Alexa', 'Paul', 'Por asignar', '25', 'F', '3006201997', 'sainthordeacacias@gmail.com', 'img/Entrenadores/Entrenador 5.png');
+(4, 'Grierson', 'Gutiérrez', 'por asignar', '29', 'M', '3107675475', 'sainthordeacacias@gmail.com', 'img/Entrenadores/trainer 4.png'),
+(5, 'Alexa', 'Paul', 'Por asignar', '25', 'F', '3006201997', 'sainthordeacacias@gmail.com', 'img/Entrenadores/trainer 5.png');
 
 -- --------------------------------------------------------
 
@@ -236,6 +205,18 @@ INSERT INTO `entrenadores_servicio` (`id_entrenadores`, `id_servicio`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `envio_informacion`
+--
+
+CREATE TABLE `envio_informacion` (
+  `id_usuario` int(3) NOT NULL,
+  `id_gimnasio` int(3) NOT NULL,
+  `mensaje` varchar(400) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `galeria_entrenador`
 --
 
@@ -249,15 +230,22 @@ CREATE TABLE `galeria_entrenador` (
 --
 
 INSERT INTO `galeria_entrenador` (`id_galeria`, `imagen`) VALUES
+(1, 'img/Galeria/entrenador 1/1.jpg'),
+(1, 'img/Galeria/entrenador 1/2.jpeg'),
+(1, 'img/Galeria/entrenador 1/3.jpg'),
 (2, 'img/Galeria/entrenador 2/1.jpg'),
 (2, 'img/Galeria/entrenador 2/2.jpg'),
 (2, 'img/Galeria/entrenador 2/3.jpg'),
 (3, 'img/Galeria/entrenador 3/1.jpg'),
 (3, 'img/Galeria/entrenador 3/2.png'),
 (3, 'img/Galeria/entrenador 3/3.png'),
-(1, 'img/Entrenadores/Jairo Garces/1.jpg'),
-(1, 'img/Entrenadores/Jairo Garces/2.jpg'),
-(1, 'img/Entrenadores/Jairo Garces/3.jpg');
+(4, 'img/Galeria/entrenador 4/1.png'),
+(4, 'img/Galeria/entrenador 4/2.jpg'),
+(4, 'img/Galeria/entrenador 4/3.jpg'),
+(5, 'img/Galeria/entrenador 5/1.jpeg'),
+(5, 'img/Galeria/entrenador 5/2.jpeg'),
+(5, 'img/Galeria/entrenador 5/3.png'),
+(5, 'img/Galeria/entrenador 5/4.jpeg');
 
 -- --------------------------------------------------------
 
@@ -275,22 +263,9 @@ CREATE TABLE `galeria_gimnasio` (
 --
 
 INSERT INTO `galeria_gimnasio` (`id_galeria`, `imagen`) VALUES
+(1, 'img/gimnasio/Gimnasio1.jpg'),
 (2, 'img/gimnasio/Gimnasio2.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/1.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/2.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/3.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/4.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/5.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/6.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/7.jpg'),
-(1, 'img/gimnasios/SPINNIG FORMA/8.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/1.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/2.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/3.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/4.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/5.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/6.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/7.jpg');
+(3, 'img/gimnasio/Gimnasio3.jpg');
 
 -- --------------------------------------------------------
 
@@ -302,38 +277,6 @@ CREATE TABLE `galeria_parque` (
   `id_galeria` int(3) DEFAULT NULL,
   `imagen` varchar(200) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `galeria_parque`
---
-
-INSERT INTO `galeria_parque` (`id_galeria`, `imagen`) VALUES
-(1, 'img/parques/Parque Principal/1.jpg'),
-(1, 'img/parques/Parque Principal/2.jpg\r\n'),
-(1, 'img/parques/Parque Principal/3.jpg'),
-(2, 'img/parques/Villa Olimpica/1.jpg'),
-(2, 'img/parques/Villa Olimpica/2.jpg'),
-(2, 'img/parques/Villa Olimpica/3.jpg'),
-(2, 'img/parques/Villa Olimpica/4.jpg'),
-(2, 'img/parques/Villa Olimpica/5.jpg'),
-(10, 'img/parques/Parque Bancarios/1.jpg'),
-(10, 'img/parques/Parque Bancarios/2.jpg'),
-(10, 'img/parques/Parque Bancarios/3.jpg'),
-(3, 'img/parques/parque  biosaludable Barrio Popular/1.jpg'),
-(4, 'img/parques/Parque la tiza/1.jpg'),
-(4, 'img/parques/Parque la tiza/2.jpg'),
-(5, 'img/parques/3 puentes/1.jpg'),
-(5, 'img/parques/3 puentes/2.jpg'),
-(5, 'img/parques/3 puentes/3.jpg'),
-(5, 'img/parques/3 puentes/4.jpg'),
-(6, 'img/parques/Parque Barrio la esperanza/1.jpg'),
-(6, 'img/parques/Parque Barrio la esperanza/2.jpg'),
-(6, 'img/parques/Parque Barrio la esperanza/3.jpg'),
-(7, 'img/parques/Parque Barrio Guaratara/1.jpg'),
-(7, 'img/parques/Parque Barrio Guaratara/2.jpg'),
-(8, 'img/parques/Parque Barrio Morichal/1.jpg'),
-(8, 'img/parques/Parque Barrio Morichal/2.jpg'),
-(8, 'img/parques/Parque Barrio Morichal/3.jpg');
 
 -- --------------------------------------------------------
 
@@ -360,9 +303,9 @@ CREATE TABLE `gimnasio` (
 --
 
 INSERT INTO `gimnasio` (`id_gimnasio`, `nombre_gimnasio`, `direccion`, `telefono`, `hora_de_apertura`, `hora_de_cierre`, `correo_gimnasio`, `descripcion`, `imagen_gimnasio`, `latitud`, `longitud`) VALUES
-(1, 'SPINNING FORMA', 'CALLE 14 No. 27 - 04 Barrio Valorina - Acacías', '3124030410', '05:00:00', '21:00:00', 'formagymjairo@hotmail.com', 'SPINNING FORMA es un gimnasio convencional, que busca que sus participantes realicen actividad física para mantener un estilo de vida saludable y así combatir problemas que hoy aquejan a las personas, como el sobrepeso, todo esto para sembrar una semilla para esta y las futuras generaciones para que vivan con un estilo y vida saludable.', 'img/gimnasios/Gimnasio1.jpg', '3.987628', '-73.769673'),
-(2, 'DINAMIC CENTER', 'CALLE 14 24 15 - 8 Barrio Coperativo', '3108519153', '05:00:00', '21:00:00', 'dinamiccenter@gmail.com', 'DINAMIC CENTER es un gimnasio convencional, que busca que sus participantes realicen actividad física para mantener un estilo de vida saludable y así combatir problemas que hoy aquejan a las personas, como el sobrepeso, todo esto para sembrar una semilla para esta y las futuras generaciones para que vivan con un estilo y vida saludable.', 'img/gimnasios/Gimnasio2.jpg', '3.987078', '-73.765383'),
-(3, 'SAINT HORDE ACACIAS', 'CARRERA 20 # 13-37 BARRIO COOPERATIVO', '3107675475', '05:00:00', '21:00:00', 'sainthordeacacias@gmail.com', 'SAINT HORDE ACACIAS es un gimnasio convencional, que busca que sus participantes realicen actividad física para mantener un estilo de vida saludable y así combatir problemas que hoy aquejan a las personas, como el sobrepeso, todo esto para sembrar una semilla para esta y las futuras generaciones para que vivan con un estilo y vida saludable', 'img/gimnasios/Gimnasio3.jpg', '3.986289', '-73.763327');
+(1, 'SPINNING FORMA', 'CALLE 14 No. 27 - 04 Barrio Valorina - Acasias', '3124030410', '05:00:00', '21:00:00', 'formagymjairo@hotmail.com', 'SPINNING FORMA es un gimnasio convencional, que busca que sus participantes realicen actividad física para mantener un estilo de vida saludable y así combatir problemas que hoy aquejan a las personas, como el sobrepeso, todo esto para sembrar una semilla para esta y las futuras generaciones para que vivan con un estilo y vida saludable.', 'img/gimnasio/Gimnasio1.jpg', '3.987628', '-73.769673'),
+(2, 'DINAMIC CENTER', 'CALLE 14 24 15 - 8 Barrio Coperativo', '3108519153', '05:00:00', '21:00:00', 'dinamiccenter@gmail.com', 'DINAMIC CENTER es un gimnasio convencional, que busca que sus participantes realicen actividad física para mantener un estilo de vida saludable y así combatir problemas que hoy aquejan a las personas, como el sobrepeso, todo esto para sembrar una semilla para esta y las futuras generaciones para que vivan con un estilo y vida saludable.', 'img/gimnasio/Gimnasio2.jpg', '3.987078', '-73.765383'),
+(3, 'SAINT HORDE ACACIAS', 'CARRERA 20 # 13-37 BARRIO COOPERATIVO', '3107675475', '05:00:00', '21:00:00', 'sainthordeacacias@gmail.com', 'SAINT HORDE ACACIAS es un gimnasio convencional, que busca que sus participantes realicen actividad física para mantener un estilo de vida saludable y así combatir problemas que hoy aquejan a las personas, como el sobrepeso, todo esto para sembrar una semilla para esta y las futuras generaciones para que vivan con un estilo y vida saludable', 'img/gimnasio/Gimnasio3.jpg', '3.986289', '-73.763327');
 
 -- --------------------------------------------------------
 
@@ -422,33 +365,6 @@ INSERT INTO `gimnasio_servicio` (`id_gimnasio`, `id_servicio`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `noticias`
---
-
-CREATE TABLE `noticias` (
-  `id_noticia` int(4) NOT NULL,
-  `nombre` varchar(100) NOT NULL,
-  `descripcion` varchar(500) NOT NULL,
-  `url` varchar(1000) NOT NULL,
-  `fecha` date NOT NULL,
-  `imagenes` varchar(1000) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `noticias`
---
-
-INSERT INTO `noticias` (`id_noticia`, `nombre`, `descripcion`, `url`, `fecha`, `imagenes`) VALUES
-(1, 'El entrenamiento de fuerza.', 'Practicar ejercicio físico, tanto de resistencia, como especialmente entrenamiento de fuerza levantando pesas, ayuda a reducir la grasa del corazón y a prevenir el desarrollo de enfermedades cardiovasculares.', 'https://www.webconsultas.com/noticias/ejercicio-y-deporte/el-entrenamiento-de-fuerza-efectivo-para-reducir-la-grasa-del-corazon', '2019-07-10', 'https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__medium/public/media/2019/07/10/pesas_obesidad.jpg'),
-(2, 'Andar o correr en la cinta ayuda a reducir el dolor menstrual', 'Las mujeres que realizan ejercicio aeróbico, como correr o andar en la cinta, podrían reducir significativamente el dolor causado por la menstruación, además de mejorar su calidad de vida a largo plazo', 'https://www.webconsultas.com/noticias/ejercicio-y-deporte/andar-o-correr-en-la-cinta-ayuda-a-reducir-el-dolor-menstrual', '2019-09-07', 'https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__medium/public/media/2019/07/09/correr_cinta_menor_dolor_menstrual.jpg'),
-(3, 'Estos 6 ejercicios ayudan a controlar el riesgo genético de obesidad', 'La herencia genética puede aumentar el riesgo de desarrollar obesidad, pero un nuevo estudio ha identificado cuáles son las actividades físicas más eficaces para prevenir el sobrepeso de origen genético.', 'https://www.webconsultas.com/noticias/ejercicio-y-deporte/estos-6-ejercicios-ayudan-a-controlar-el-riesgo-genetico-de-obesidad', '2019-08-05', 'https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__medium/public/media/2019/08/05/yoga_evita_obesidad_genetica.jpg'),
-(4, 'Hacer ejercicio físico en el embarazo beneficia al corazón del bebé', 'Confirman que realizar ejercicio físico durante el embarazo mejora el funcionamiento del corazón del bebé y, además, puede ayudar a la madre a recuperar antes su peso inicial tras el parto.', 'https://www.webconsultas.com/noticias/ejercicio-y-deporte/hacer-ejercicio-fisico-en-el-embarazo-beneficia-al-corazon-del-bebe', '2019-06-28', 'https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__medium/public/media/2019/06/28/ejercicio_embarazada_corazon_bebe.jpg'),
-(5, 'El ejercicio ayuda a reponerse tras la cirugía por cáncer de pulmón', 'Los pacientes con carcinoma pulmonar no microcítico que inician una actividad física tras someterse a una cirugía para extirpar el tumor tienen menos dificultad para respirar y mejoran la fuerza de sus músculos.', 'https://www.webconsultas.com/noticias/ejercicio-y-deporte/el-ejercicio-ayuda-a-reponerse-tras-la-cirugia-por-cancer-de-pulmon', '2019-06-25', 'https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__medium/public/media/2019/06/25/ejercicio_tras_cancer_pulmon.jpg'),
-(6, 'El deporte a corta edad evita problemas emocionales en la adolescencia', 'Los niños que desde los seis años participan en actividades deportivas organizadas tienen menos riesgo de presentar dificultades emocionales, como ansiedad o aislamiento social, al llegar a los 12 años, según un estudio.', 'https://www.webconsultas.com/noticias/ejercicio-y-deporte/el-deporte-a-corta-edad-evita-problemas-emocionales-en-la-adolescencia', '2019-06-06', 'https://www.webconsultas.com/sites/default/files/styles/wc_adaptive_noticia__medium/public/media/2019/06/06/actividades_deportivas_ninos.jpg');
-
--- --------------------------------------------------------
-
---
 -- Estructura de tabla para la tabla `parque`
 --
 
@@ -471,12 +387,13 @@ INSERT INTO `parque` (`id_parque`, `nombre_parque`, `descripcion`, `direccion`, 
 (2, 'Villa Olímpica', 'evento masivo de Actividad Física Musicalizada a desarrollarse en la villa Olímpica del barrio San Cristóbal, para toda la comunidad del Municipio ', 'Cra. 14 #18, Acacías, Meta', '3.99096510', '-73.75704420', 'img/parques/villa-olimpica.png'),
 (3, 'Parque Biosaludable Barrio Popular', 'parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 5 #16-23 a 16-1, Acacías, Meta', '3.98821590', '-73.75052460', 'img/parques/parque-biosaludable.jpg'),
 (4, 'Parque Barrio La Tiza', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra 25 # 21 a Acacias - Meta', '3.99669530', '-73.76465690', 'img/parques/parque-tiza.jpg'),
-(5, 'Parque 3 Puentes', 'parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 33, Acacías, Meta', '3.99341230', '-73.77457510', 'img/parques/3 puentes.jpg'),
-(6, 'Parque Barrio La Esperanza', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 14 #21-247 a 21-217, Acacías, Meta', '3.99634450', '-73.75616550', 'img/parques/Esparque-esperanza.jpg'),
-(7, 'Parque Barrio Guaratara', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 77a # 25 25a Acacias Meta', '3.99746970', '-73.75910530', 'img/parques/parque-guaratara.jpg'),
-(8, 'Parque Barrio El Morichal', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra 16. 22 Acacias Meta', '3.99507310', '-73.75786000', 'img/parques/parque-morichal.jpg'),
-(9, 'Parque Barrio Bambú', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 13 # 21 a - 22 a', '3.99367550', '-73.75478970', 'img/parques/Parque-Bambu.jpg'),
-(10, 'Parque Bancarios\r\n', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', '# a 13-78,, Cra. 32 #132, Acacías, Meta', '3.98706880', '-73.77296070', 'img/parques/parque-bancarios.jpg');
+(5, 'Las Colinas', 'Un espacio abierto, que cuenta con mucha naturaleza a su alrededor, para desarrollar deportes físicos, perfecto para caminatas y excursiones.', 'Cra. 47 villancencio - Acacias', '3.99270210', '-73.78281040', 'img/parques/las-colinas.jpg'),
+(6, 'Parque 3 Puentes', 'parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 33, Acacías, Meta', '3.99341230', '-73.77457510', 'img/parques/tres-puentes.jpg'),
+(7, 'Parque Barrio La Esperanza', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 14 #21-247 a 21-217, Acacías, Meta', '3.99634450', '-73.75616550', 'img/parques/Esparque-esperanza.jpg'),
+(8, 'Parque Barrio Guaratara', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 77a # 25 25a Acacias Meta', '3.99746970', '-73.75910530', 'img/parques/parque-guaratara.jpg'),
+(9, 'Parque Barrio El Morichal', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra 16. 22 Acacias Meta', '3.99507310', '-73.75786000', 'img/parques/parque-morichal.jpg'),
+(10, 'Parque Barrio Bambú', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', 'Cra. 13 # 21 a - 22 a', '3.99367550', '-73.75478970', 'img/parques/Parque-Bambu.jpg'),
+(11, 'Parque Bancarios\r\n', 'Parque para desarrollar ejercicio, especialmente para los niños y jóvenes que desean pasar un rato divertido desarrollando actividad física. ', '# a 13-78,, Cra. 32 #132, Acacías, Meta', '3.98706880', '-73.77296070', 'img/parques/parque-bancarios.jpg');
 
 -- --------------------------------------------------------
 
@@ -533,26 +450,30 @@ INSERT INTO `servicio` (`id_servicio`, `tipo_de_servicio`, `descripcion_servicio
 (10, 'Entrenamiento intensibo', 'El entrenamiento de alta intensidad es un tipo de entrenamiento de fuerza que se enfoca en la calidad de las repeticiones y del fallo muscular momentáneo. Es decir, solo se necesita de una serie de un solo ejercicio y llegar hasta el fallo muscular para que esto funcione.', 'img/Servicios/ejercicio-intensivo.jpg'),
 (11, 'accesorios y suplementos', 'Los suplementos dietéticos son, según estableció una ley aprobada por el Congreso de los Estados Unidos en 1994, aquellos productos que: Se consumen por vía oral. Contienen un \"ingrediente alimenticio\" destinado a complementar la alimentación.', 'img/Servicios/suplementos.jpg');
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `usuarios`
+--
+
+CREATE TABLE `usuarios` (
+  `id_usuario` int(3) NOT NULL,
+  `nombre_usuario` varchar(45) NOT NULL,
+  `apellido_usuario` varchar(45) NOT NULL,
+  `edad_usuario` varchar(3) NOT NULL,
+  `genero_usuario` varchar(1) NOT NULL,
+  `telefono_usuario` varchar(10) DEFAULT NULL,
+  `correo_usuario` varchar(45) DEFAULT NULL
+) ;
+
 --
 -- Índices para tablas volcadas
 --
 
 --
--- Indices de la tabla `calificacion_ent`
+-- Indices de la tabla `caracterisitcas`
 --
-ALTER TABLE `calificacion_ent`
-  ADD KEY `id_calificacion` (`id_calificacion`);
-
---
--- Indices de la tabla `calificacion_gym`
---
-ALTER TABLE `calificacion_gym`
-  ADD KEY `id_calificacion` (`id_calificacion`);
-
---
--- Indices de la tabla `caracteristicas`
---
-ALTER TABLE `caracteristicas`
+ALTER TABLE `caracterisitcas`
   ADD KEY `id_caracteristicas` (`id_caracteristicas`);
 
 --
@@ -586,6 +507,13 @@ ALTER TABLE `entrenadores_profesion`
 ALTER TABLE `entrenadores_servicio`
   ADD KEY `id_entrenadores` (`id_entrenadores`),
   ADD KEY `id_servicio` (`id_servicio`);
+
+--
+-- Indices de la tabla `envio_informacion`
+--
+ALTER TABLE `envio_informacion`
+  ADD KEY `id_usuario` (`id_usuario`),
+  ADD KEY `id_gimnasio` (`id_gimnasio`);
 
 --
 -- Indices de la tabla `galeria_entrenador`
@@ -626,12 +554,6 @@ ALTER TABLE `gimnasio_servicio`
   ADD KEY `id_servicio` (`id_servicio`);
 
 --
--- Indices de la tabla `noticias`
---
-ALTER TABLE `noticias`
-  ADD PRIMARY KEY (`id_noticia`);
-
---
 -- Indices de la tabla `parque`
 --
 ALTER TABLE `parque`
@@ -650,13 +572,19 @@ ALTER TABLE `servicio`
   ADD PRIMARY KEY (`id_servicio`);
 
 --
+-- Indices de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  ADD PRIMARY KEY (`id_usuario`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT de la tabla `caracteristicas`
+-- AUTO_INCREMENT de la tabla `caracterisitcas`
 --
-ALTER TABLE `caracteristicas`
+ALTER TABLE `caracterisitcas`
   MODIFY `id_caracteristicas` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
@@ -669,7 +597,7 @@ ALTER TABLE `comentarios`
 -- AUTO_INCREMENT de la tabla `comentarios_entrenador`
 --
 ALTER TABLE `comentarios_entrenador`
-  MODIFY `id_comentario` int(3) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_comentario` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `entrenadores`
@@ -682,12 +610,6 @@ ALTER TABLE `entrenadores`
 --
 ALTER TABLE `gimnasio`
   MODIFY `id_gimnasio` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
-
---
--- AUTO_INCREMENT de la tabla `noticias`
---
-ALTER TABLE `noticias`
-  MODIFY `id_noticia` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `parque`
@@ -708,26 +630,20 @@ ALTER TABLE `servicio`
   MODIFY `id_servicio` int(3) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
+-- AUTO_INCREMENT de la tabla `usuarios`
+--
+ALTER TABLE `usuarios`
+  MODIFY `id_usuario` int(3) NOT NULL AUTO_INCREMENT;
+
+--
 -- Restricciones para tablas volcadas
 --
 
 --
--- Filtros para la tabla `calificacion_ent`
+-- Filtros para la tabla `caracterisitcas`
 --
-ALTER TABLE `calificacion_ent`
-  ADD CONSTRAINT `calificacion_ent_ibfk_1` FOREIGN KEY (`id_calificacion`) REFERENCES `entrenadores` (`id_entrenadores`);
-
---
--- Filtros para la tabla `calificacion_gym`
---
-ALTER TABLE `calificacion_gym`
-  ADD CONSTRAINT `calificacion_gym_ibfk_1` FOREIGN KEY (`id_calificacion`) REFERENCES `gimnasio` (`id_gimnasio`);
-
---
--- Filtros para la tabla `caracteristicas`
---
-ALTER TABLE `caracteristicas`
-  ADD CONSTRAINT `caracteristicas_ibfk_1` FOREIGN KEY (`id_caracteristicas`) REFERENCES `gimnasio` (`id_gimnasio`);
+ALTER TABLE `caracterisitcas`
+  ADD CONSTRAINT `caracterisitcas_ibfk_1` FOREIGN KEY (`id_caracteristicas`) REFERENCES `gimnasio` (`id_gimnasio`);
 
 --
 -- Filtros para la tabla `comentarios`
@@ -754,6 +670,13 @@ ALTER TABLE `entrenadores_profesion`
 ALTER TABLE `entrenadores_servicio`
   ADD CONSTRAINT `entrenadores_servicio_ibfk_1` FOREIGN KEY (`id_entrenadores`) REFERENCES `entrenadores` (`id_entrenadores`) ON DELETE CASCADE ON UPDATE CASCADE,
   ADD CONSTRAINT `entrenadores_servicio_ibfk_2` FOREIGN KEY (`id_servicio`) REFERENCES `servicio` (`id_servicio`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `envio_informacion`
+--
+ALTER TABLE `envio_informacion`
+  ADD CONSTRAINT `envio_informacion_ibfk_1` FOREIGN KEY (`id_usuario`) REFERENCES `usuarios` (`id_usuario`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `envio_informacion_ibfk_2` FOREIGN KEY (`id_gimnasio`) REFERENCES `gimnasio` (`id_gimnasio`) ON DELETE CASCADE ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `galeria_entrenador`

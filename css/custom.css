@@ -248,7 +248,7 @@ header {
 	padding-right: 40px;
 }
 header .logo img {
-	max-width: 100%;
+	max-width: 65%;
 	-moz-transition: all 0.3s ease 0s;
 	-o-transition: all 0.3s ease 0s;
 	-webkit-transition: all 0.3s ease 0s;
@@ -281,7 +281,7 @@ header.header-small .header-sec {
     padding-right: 15px;
 }
 header.header-small .logo img {
-	max-width: 100%;
+	max-width: 55px;
 }
 header.header-small .logo {
 	height: 43px;
@@ -313,7 +313,7 @@ header.header-small .header_search_outer .icon-search-icon {
 	cursor: pointer;
 }
 header.header-small .header_search_outer .icon-search-icon::before {
-	color: #00b3ed;
+	color: #ffffff;
 }
 .header_search_outer .header_search {
 	position: absolute;
@@ -373,14 +373,9 @@ header.header-small .header_search_outer .icon-search-icon::before {
 	padding: 4px 0;
 	margin: 0 20px;
 	border-bottom: 2px solid transparent;
-	font-family: Georgia, serif;
-	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
 }
 header.header-small .navbar-dark .navbar-nav .nav-link {
-	font-family: Georgia, serif;
-	letter-spacing: 0;
-	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
-
+	color: #000000;
 }
 .navbar-dark .navbar-nav .active > .nav-link, .navbar-dark .navbar-nav .nav-link.active, .navbar-dark .navbar-nav .nav-link.show, .navbar-dark .navbar-nav .show > .nav-link, .navbar-dark .navbar-nav .nav-link:focus, .navbar-dark .navbar-nav .nav-link:hover, header.header-small .navbar-dark .navbar-nav .active > .nav-link, header.header-small .navbar-dark .navbar-nav .nav-link:focus {
 	border-bottom: 2px solid #007bff;
@@ -426,25 +421,23 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 }
 .banner-outer .content h1 {
 	display: block;
-	font-size: 63px;
+	font-size: 50px;
 	font-weight: 700;
 	color: #fff;
 	font-style: italic;
 	line-height: 65px;
 	-webkit-animation-delay: 0.2s;
-	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
 }
 .banner-outer .content h2 {
 	display: block;
 	padding-bottom: 5px;
-	font-size: 86px;
+	font-size: 110px;
 	font-weight: 700;
 	color: #00b3ed;
 	font-style: italic;
 	text-align: justify;
 	line-height: 155px;
 	-webkit-animation-delay: 0.2s;
-	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
 }
 .banner-outer .content p {
 	display: block;
@@ -666,12 +659,10 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 /* Muscle Section */
 /* ================================================== */
 .muscle-outer {
-	background: #e2e2e2;
-    display: inline-block;
-    width: 86%;
-    position: relative;
-    margin: 0%;
-    margin-left: 7%;
+	background: #eeeeee;
+	display: inline-block;
+	width: 100%;
+	position: relative;
 }
 .muscle-outer figure {
 	width: 45%;
@@ -698,7 +689,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 }
 .muscle-para h3 {
 	font-size: 35px;
-	color: #00b3ed;
+	color: #fb9221;
 }
 .muscle-para h4 {
 	font-size: 49px;
@@ -891,13 +882,9 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 /*Fitness Sec*/
 .finess-outer {
 	padding: 65px 0;
-	background: #000 url(../img/Tips/tip2.jpg) no-repeat center top / cover;
+	background: #000 url(../images/fitness_bg.png) no-repeat center top / cover;
 	background-attachment: fixed;
 	text-align:center;
-	width: 86%;
-    position: relative;
-    margin: 0%;
-    margin-left: 7%;
 }
 .finess-outer h3 {
 	color: #fff;
@@ -907,7 +894,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 	text-transform: uppercase
 }
 .finess-outer h3 span {
-	color: #00b3ed
+	color: #fb9221
 }
 /* ================================================== */
 /* Counter Section */
@@ -1174,7 +1161,7 @@ a.scroll-top:hover {
 }
 .about-top-right img {
 	/*position: absolute;*/
-	max-width: 400px;
+	max-width: 1113px;
 	left: 0;
 	bottom: -18px;
 }
@@ -1714,10 +1701,6 @@ ul.tags-list li a:hover {
 .finess-outer {
 	background-attachment: scroll;
 	padding: 50px 0;
-	width: 86%;
-    position: relative;
-    margin: 0%;
-    margin-left: 7%;
 }
 h2 {
     font-size: 30px;
@@ -1757,7 +1740,6 @@ h2 {
 .navbar-dark .navbar-nav .nav-link {
 	font-size: 16px;
 	margin: 0 7px;
-	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
 }
 .news-box p {
 	font-size: 15px;
@@ -1866,8 +1848,6 @@ p {
 .navbar-dark .navbar-nav .nav-link {
 	font-size: 14px;
 	margin: 0 5px;
-	font-family: Georgia, serif;
-	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
 }
 .banner-outer .content h1 {
 	font-size: 50px;
@@ -1988,8 +1968,6 @@ ul.follow-us li a {
 header {
 	position: static;
 	background: #02b3ec;
-	/*background: url(../img/home-banner.png)no-repeat center top / cover;*/
-
 }
 header.header-small {
 	background: #02b3ec;
@@ -2004,7 +1982,7 @@ header .logo, header.header-small .logo {
 }
 header .logo img, header.header-small .logo img.main {
 	display: inline-block;
-	max-width: 60%;
+	max-width: 80px;
 	margin: 0;
 }
 header.header-small img.fix {

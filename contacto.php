@@ -47,10 +47,6 @@
     include 'header.php';
     ?>
    <br><br><br><br><br><br>
-
-   <style>
-       
-   </style>
             <div class="login-w3l"> 
             <div class="top-img-agileits-w3layouts">
                 <h2 class="sub-head-w3-agileits" >CONTACTO</h2>
@@ -81,11 +77,6 @@
 
                     if (isset($_POST['enviar'])) {
                         try {
-                            
-                             $dominio = $_SERVER["HTTP_HOST"];
-                            $res = $_SERVER["REQUEST_URI"];
-                            $url = "http://" . $dominio . $res;
-
                             $primer_nombre = $_POST['nombre'];
                             $segundo_nombre = $_POST['apellido'];
                             $telefono = $_POST['telefono'];
@@ -107,7 +98,7 @@
                             $mail_setFromEmail = "AcaciasGym@gmail.com";
                             $mail_setFromName = "AcaciasGym";
 
-                            email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $tema, $comentario,$url); //Enviar el mensaje
+                            email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $tema, $comentario); //Enviar el mensaje
 
                         } catch (Exception $e) {
                             echo $e;

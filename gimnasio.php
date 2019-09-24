@@ -37,16 +37,16 @@
     <link href="assets/aos/aos.css" rel="stylesheet" type="text/css">
     <!-- CUSTOM STYLE -->
     <link href="css/custom.css" rel="stylesheet" type="text/css">
-    <!--ESTRELLAS-->
+
     <link href="css/starrr.css" rel=stylesheet>
-    <!--ESTRELLAS-->
+
     <!-- FIN DE ARCHIVOS CSS-->
 
 </head>
 
 <body>
     <!-- ANIMACION DE CARGA DE INICIO-->
-    <!--<div id="loading" style="background-color:#070d38">
+    <div id="loading" style="background-color:#070d38">
         <div class="element">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -55,7 +55,7 @@
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>-->
+    </div>
     <!--EL FRAMWEORK ES Bootstrap.CSS EN LA CARPERTA CSS ADEMAS DEL ARCHVO EN LA CARPETA JS CON EL MISMO NOMBRE, PARA QUE FINALICE LA ANIMACION (JQUERY ES NECESARIO)  -->
 
     <!-- FIN DE LA ANIMACION -->
@@ -93,51 +93,25 @@
                             </ul>
                         </div>
                     </div>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- FIN DEL BANNER -->
-    <!--DESCRIPCION E IMAGEN-->
-    <div class="about-top-outer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-7 col-xs-12">
-                    <div class="about-top-left">
-                    <?php
-                        echo "<h3><span>" . $campo['nombre_gimnasio'] . "</span></h3>";
-                        echo "<p style='text-align: justify;'>" . $campo['descripcion'] . "</p>";
-                        echo "<p style='text-align: left; font-weight: bold;'> Dirección: " . $campo['direccion'] . "</p>";
-                    }
-
-                    $es = "SELECT id_calificacion, SUM(calificacion) AS suma_califaciones, COUNT(*) as total_califaciones FROM calificacion_gym WHERE id_calificacion =   '$id'";
-                    $rses = mysqli_query($conexion, $es);
-                    while ($campo = mysqli_fetch_array($rses, MYSQLI_BOTH)) {
-
-                        $total_calificaciones = $campo['total_califaciones'];
-
-                        if ($total_calificaciones == 0) {
-                            echo "<p style='text-align: left;font-weight: bold;'>No hay califaciones por el momento</p>";
-                        } else {
-                            $calificacion = $campo['suma_califaciones'];
-                            $calify = $calificacion / $total_calificaciones;
-                            echo "Nm de calificaciones (" . $campo['total_califaciones'] . ")<br>";
-                            echo "<br>";
-                            echo " <p class='clasificacion' style='font-weight: bold;'>
-                                    Califiación:   " . round($calify, 2) . "
-                                    <label style='color:yellow'>★</label>  
-                                    </p>";
-                        }
-                    }
-                    ?>
-
+        <!-- FIN DEL BANNER -->
+        <!--DESCRIPCION E IMAGEN-->
+        <div class="about-top-outer">
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-7 col-xs-12">
+                        <div class="about-top-left">
+                            <?php
+                            echo "<h3><span>" . $campo['nombre_gimnasio'] . "</span></h3>";
+                            echo "<p style='text-align: justify;'>" . $campo['descripcion'] . "</p>";
+                            ?>
+                        </div>
                     </div>
-                </div>
-                <div class="col-sm-5 col-xs-12">
-                    <?php
-                    $consulta = "SELECT * FROM gimnasio WHERE id_gimnasio = '$id'";
-                    $resultado = mysqli_query($conexion, $consulta);
-                    while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                        echo "<figure class='about-top-right'><img style='max-width: 500px;' src='" . $campo['imagen_gimnasio'] . "'></figure>";
+                    <div class="col-sm-5 col-xs-12">
+                        <?php
+                        echo "<figure class='about-top-right'><img style='max-width: 400px;' src='". $campo['imagen_gimnasio']."'></figure>";
                     }
                     ?>
 
@@ -160,8 +134,8 @@
                     while ($campo2 = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='item'>
                                     <div class='trainers-box'>
-                                        <a href='entrenador.php?" . $campo2['id_entrenadores'] . "'><figure><img src='" . $campo2['imagen_entrenador'] . "' alt='' style='border-radius:5px;'></figure></a><br>
-                                        <a href='entrenador.php?" . $campo2['id_entrenadores'] . "'><span style='background: #00b3ed; color:white;border:#ced4da;'>" . $campo2['nombre_entrenador'] . " " . $campo2['apellido_etrenador'] . "</span></a>
+                                        <a href='entrenador.php?".$campo2['id_entrenadores']."'><figure><img src='".$campo2['imagen_entrenador']. "' alt=''></figure></a>
+                                        <a href='entrenador.php?".$campo2['id_entrenadores']."'><span style='background: #00b3ed; color:white;border:#ced4da;'>" . $campo2['nombre_entrenador'] . " " . $campo2['apellido_etrenador'] . "</span></a>
                                     </div>
                                 </div>";
                     }
@@ -179,39 +153,39 @@
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <?php
-                        $Const = "SELECT * FROM caracteristicas WHERE id_caracteristicas = '$id'";
+                        $Const = "SELECT * FROM caracterisitcas WHERE id_caracteristicas = '$id'";
                         $reslt = mysqli_query($conexion, $Const);
                         while ($ress = mysqli_fetch_array($reslt, MYSQLI_BOTH)) {
-                            ?>
-                            <figure><img src="images/counter1.png" alt=""></figure>
-                            <?php echo " <strong class='counter'>" . $ress['entrenadores'] . "</strong>"; ?>
-                            <small>Entrenadores</small>
+                        ?>
+                        <figure><img src="images/counter1.png" alt=""></figure>
+                        <?php echo " <strong class='counter'>".$ress['entrenadores']."</strong>"; ?>
+                        <small>Entrenadores</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <figure><img src="images/counter2.png" alt=""></figure>
-                        <?php echo " <strong class='counter'>" . $ress['clientes_satisfechos'] . "</strong>"; ?>
+                        <?php echo " <strong class='counter'>".$ress['clientes_satisfechos']."</strong>"; ?>
                         <small>Clientes satisfechos</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <figure><img src="images/counter3.png" alt=""></figure>
-                        <?php echo " <strong class='counter'>" . $ress['premios_recibidos'] . "</strong>"; ?>
+                        <?php echo " <strong class='counter'>".$ress['premios_recibidos']."</strong>"; ?>
                         <small>Premios recibidos</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
                         <figure><img src="images/counter4.png" alt=""></figure>
-                        <?php echo " <strong class='counter'>" . $ress['equipamentos'] . "</strong>"; ?>
+                        <?php echo " <strong class='counter'>".$ress['equipamentos']."</strong>"; ?>
                         <small>Euipamentos</small>
                     </div>
                 </div>
-            <?php
-            }
-            ?>
+                <?php
+                }
+                ?>
             </div>
         </div>
     </div>
@@ -268,14 +242,14 @@
                         echo "<div class='col-sm-4 col-xs-12'>
                             <div class='feature-box'>
                                 <figure>
-                                    <img src='" . $res['imagen_servicio'] . "'>
+                                    <img src='".$res['imagen_servicio']."'>
                                     <div class='time-box'>
                                         <span class='date'><span>" . $res['hora_de_apertura'] . "</span></span>
                                         <span class='time'><span>" . $res['hora_de_cierre'] . "</span></span>
                                     </div>
                                 </figure>
                                 <h4>" . $res['tipo_de_servicio'] . "</h4>
-                                <p style='text-align:justify'>" . substr($res['descripcion_servicio'], 0, 1000) . " .  .  .  .</p>   
+                                <p style='text-align:justify'>" . $res['descripcion_servicio'] . "<a href='classes.php'style='color: #00b3ed;'> Ver Mas...</a></p>   
                             </div>
                         </div>";
                     }
@@ -469,26 +443,26 @@
                                 <script src="script.php"></script>
                                 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=iniciarMap"></script>
                                 </div>-->
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-        <!--FIN MAPA POR MEDIO DE GOOGLE MAPS-->
-        <br>
-        <!--MAPA POR MEDIO DE WAZE -->
-        <div class="about-top-outer">
-            <div class="container">
-                <div class="head border">
-                    <h3><span style="color: #00b3ed">MAPA: WAZE</span></h3>
-                </div>
-                <div class="rows">
-                    <div class="container">
-                        <div class="map-outer map">
-                        <?php
-                            echo "<iframe src='https://embed.waze.com/iframe?zoom=16&lat=" . $mp['latitud'] . "&lon=" . $mp['longitud'] . "&pin=1&desc=9'
+            <!--FIN MAPA POR MEDIO DE GOOGLE MAPS-->
+            <br>
+            <!--MAPA POR MEDIO DE WAZE -->
+            <div class="about-top-outer">
+                <div class="container">
+                    <div class="head border">
+                        <h3><span style="color: #00b3ed">MAPA: WAZE</span></h3>
+                    </div>
+                    <div class="rows">
+                        <div class="container">
+                            <div class="map-outer map">
+                                <?php
+                                echo "<iframe src='https://embed.waze.com/iframe?zoom=16&lat=" . $mp['latitud'] . "&lon=" . $mp['longitud'] . "&pin=1&desc=9'
                             width='100%' height='520'></iframe>";
-                        }
-                        ?>
+                            }
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -499,39 +473,28 @@
     <!--GALERIA-->
     <!--FIN DE LA GALERIA-->
     <div class="gallery-outer about-top-outer">
-        <div class="container">
-            <div class="head border">
-                <h3><span style="color: #00b3ed">TÚ GALERIA</span></h3>
-            </div>
-            <ul class="tabs">
-                <li class="active"><span data-filter="*">Imagenes</span></li>
-            </ul>
-            <div class="gallery-list">
-                <div class="row grid">
+            <div class="container">
+                <div class="head border">
+                    <h3><span style="color: #00b3ed">TÚ GALERIA</span></h3>
+                </div>
+                <ul class="tabs">
+                    <li class="active"><span data-filter="*">Imagenes</span></li>
+                </ul>
+                <div class="gallery-list">
+                    <div class="row grid">
                     <?php
-                    $consulta2 = "SELECT COUNT(*) as cantidad FROM galeria_gimnasio WHERE id_galeria = '$id'";
+                    $consulta2 = "SELECT * FROM galeria_gimnasio WHERE id_galeria = '$id'";
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
-                        $cantidad = $campo['cantidad'];
-                    }
-                    if ($cantidad>0) {
-                            $consulta2 = "SELECT * FROM galeria_gimnasio WHERE id_galeria = '$id'";
-                            $resultado2 = mysqli_query($conexion, $consulta2);
-                            while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
-                                echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
-                                <div class='gallery-box'><figure><img src='" . $campo['imagen'] . "'></figure>
-                                <a href='" . $campo['imagen'] . "' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
-                            }
-                    }else{
-                        echo "<p>No hay imganes que mostrar por el momento</p>";
+                        echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
+                        <div class='gallery-box'><figure><img src='".$campo['imagen']."'></figure>
+                        <a href='".$campo['imagen']."' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
                     }
                     ?>
                 </div>
             </div>
         </div>
-    </div>
-        <!-- FIN DE LA GALERIA>-->
-        <!--CALIFICACIÓN-->
+    <!-- FIN DE LA GALERIA>-->
         <div class="about-top-outer">
             <div class="container">
                 <div class="head border">
@@ -539,34 +502,32 @@
                 </div>
                 <div class="rows">
                     <form method="POST">
-                        <div class="container">
-                            <p class="clasificacion">
-                                <input id="radio1" type="submit" name="estrellas" value="5">
-                                <label for="radio1">★</label>
-                                <input id="radio2" type="submit" name="estrellas" value="4">
-                                <label for="radio2">★</label>
-                                <input id="radio3" type="submit" name="estrellas" value="3">
-                                <label for="radio3">★</label>
-                                <input id="radio4" type="submit" name="estrellas" value="2">
-                                <label for="radio4">★</label>
-                                <input id="radio5" type="submit" name="estrellas" value="1">
-                                <label for="radio5">★</label>
-                            </p>
-
-                    </form>
+                    <div class="container">
+                        <p class="clasificacion">
+                          <input id="radio1" type="radio" name="estrellas" value="5">
+                          <label for="radio1">★</label>
+                          <input id="radio2" type="radio" name="estrellas" value="4">
+                          <label for="radio2">★</label>
+                          <input id="radio3" type="radio" name="estrellas" value="3">
+                          <label for="radio3">★</label>
+                          <input id="radio4" type="radio" name="estrellas" value="2">
+                          <label for="radio4">★</label>
+                          <input id="radio5" type="radio" name="estrellas" value="1">
+                          <label for="radio5">★</label>
+                        </p>
+                        <input type="submit" name="clasificacion" class="btn">
+                        </form>
+                    </div>
                 </div>
-                <p></p>
             </div>
         </div>
-    </div>
-    <!--CALIFICACIÓN-->
-    <?php
-    if (isset($_POST['estrellas'])) {
-        $estrellas = $_POST['estrellas'];
-        include 'estrellas\estrellas.php';
-        guardar_estrellas($id, $estrellas);
-    }
-    ?>
+        <?php
+             if (isset($_POST['estrellas'])) {
+                $estrellas = $_POST['estrellas'];
+                include 'estrellas\estrellas.php';
+                guardar_estrellas($estrellas);
+             }
+        ?>
     <!--COMENTARIOS-->
     <div class="about-top-outer">
         <div class="container">
@@ -576,7 +537,7 @@
             <div class="rows">
                 <div class="container">
                     <div class="form-wrapper">
-                        <h3>¡Completa la información!</h3><br>
+                        <h3>¡Completa la informacíon!</h3><br>
                         <p>Siempre nos complace conocer su opinión, así que no dude en dejar un comentario sobre el Gimnasio y como le pareció este, o si tiene alguna duda escríbala, para obtener una respuesta.</p>
                         <?php echo "<form method='POST'>"; ?>
                         <div class="row input-row">
@@ -648,7 +609,7 @@
                             $mail_setFromEmail = "AcaciasGym@gmail.com";
                             $mail_setFromName = "AcaciasGym";
 
-                            email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $comentario, $id, $nombre_gym, $url); //Enviar el mensaje
+                            email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template, $primer_nombre, $segundo_nombre, $telefono, $correo, $comentario, $id, $nombre_gym); //Enviar el mensaje
 
                         } catch (Exception $e) {
                             echo $e;
@@ -686,12 +647,6 @@
             </div>
         </div>
     </div>
-    </form>
-    </div>
-    </div>
-    </div>
-    </div>
-
     <!--FIN DE COMENTARIOS-->
     <?php
     include 'footer.php';
@@ -717,7 +672,7 @@
     <script src="assets/counterup/waypoints.min.js"></script>
     <!-- CUSTOM JS -->
     <script src="js/custom.js"></script>
-    <script src="js/starrr.js"></script>
+        <script src="js/starrr.js"></script>
     <!-- FIN DE ARCHIVOS JS-->
 </body>
 
