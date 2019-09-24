@@ -19,13 +19,17 @@
 	<!--<img src="img/Entrenadores/trainer 1.png">-->
 
 	<?php
-	date_default_timezone_set('America/Bogota');
-	$fecha = date("d-m-Y");
-	$hora = date("h:i a");
 
-	echo $fecha;
-	echo "<br>";
-	echo $hora;
-	?>
+	$dominio = $_SERVER["HTTP_HOST"];
+    $res = $_SERVER["REQUEST_URI"];
+    $url = "http://" . $dominio . $res;
+     $id_gym = explode("w/", $url);
+                $id = $id_gym[1];
+   	echo $url;
+
+	?><a href="https://www.contadorvisitasgratis.com" title="contador de visitas html"><img src="https://counter10.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=1wl54nnhjyzk57l5mbcm4xlwkylsqtxe" border="0" title="contador de visitas html" alt="contador de visitas html"></a>
+
+
+	<div id="sfc1wl54nnhjyzk57l5mbcm4xlwkylsqtxe"></div><script type="text/javascript" src="https://counter10.wheredoyoucomefrom.ovh/private/counter.js?c=1wl54nnhjyzk57l5mbcm4xlwkylsqtxe&down=async" async></script><noscript><a href="https://www.contadorvisitasgratis.com" title="contador de visitas html"><img src="https://counter10.wheredoyoucomefrom.ovh/private/contadorvisitasgratis.php?c=1wl54nnhjyzk57l5mbcm4xlwkylsqtxe" border="0" title="contador de visitas html" alt="contador de visitas html"></a></noscript>
 </body>
 </html>

@@ -44,7 +44,7 @@ h1,h2,h3,h4,h5,h6{
 	font-family: 'Montserrat', sans-serif;
 }
 .top-img-agileits-w3layouts {
-    background: url(../img/banner/banner2.jpg)no-repeat 0px 0px;
+    /*background: url(../img/banner/banner2.jpg)no-repeat 0px 0px;*/
     background-size: cover;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -80,7 +80,7 @@ h2.sub-head-w3-agileits {
 .login-w3l {
     width: 35%;
     margin: 0 auto;
-    background: rgb(0, 0, 0);
+    background: rgba(0, 0, 0, 0.24);
     border-radius: 18px;
     -webkit-box-shadow: 10px 10px 16px 0px rgba(255, 255, 255, 0.1);
     -moz-box-shadow: 10px 10px 16px 0px rgba(255, 255, 255, 0.1);

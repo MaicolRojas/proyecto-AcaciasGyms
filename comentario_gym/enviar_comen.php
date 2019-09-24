@@ -5,7 +5,7 @@
 	<script src="alertifyjs/alertify.js"></script>
 </head>
 <?php
-function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$primer_nombre,$segundo_nombre,$telefono,$correo,$comentario,$id,$nombre_gym)
+function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $mail_setFromName, $mail_addAddress, $template,$primer_nombre,$segundo_nombre,$telefono,$correo,$comentario,$id,$nombre_gym,$url)
 {
 	require 'PHPMailer/PHPMailerAutoload.php';
 	$mail = new PHPMailer;
@@ -43,13 +43,15 @@ function email_enviar($mail_username, $mail_userpassword, $mail_setFromEmail, $m
 	$mail->msgHTML($message);
 	if(!$mail->send()) {
 		echo "<script language='JavaScript'>";
-		echo "alertify.error('No se pudo enviar el comentario');";
+		echo "alertify.error('<center>No se pudo enviar el comentario.<br>Intentalo mas tarde'</center>);";
 		echo "</script>";
 		echo 'Error de correo: ' . $mail->ErrorInfo."</p>";
+		echo "<meta http-equiv='Refresh' content='4;url=".$url."'>";
 	} else {
 		echo "<script language='JavaScript'>";
-		echo "alertify.alert('Su Comentario se ha enviado satisfactomiante. :D');";
+		echo "alertify.alert('<center>Su Comentario se ha enviado satisfactomiante. :D<br>En unos segundo aparecera</center>');";
 		echo "</script>";
+		echo "<meta http-equiv='Refresh' content='4;url=".$url."'>";
 	}
 }
 ?>

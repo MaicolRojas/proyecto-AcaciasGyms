@@ -66,11 +66,11 @@
             <div class="container">
                 <div class="content" data-aos="fade-right">
                     <h1>ENTRENA TU CUERPO</h1>
-                    <h2 style="text-align: center;">ACACIAGYM</h2>
-                    <p>aquí se pone algo que inspire a hacer ejercicio y todas esas cosas...
-                        la cucaracha la cucaracha ya no puede caminar porque le falta porque le
-                        falta una pata para caminar... </p>
-                    <a href="http://www.google.com" class="btn" style="">INGRESAR</a>
+                    <h2 style="text-align: center; text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;">ACACIAS-GYM</h2>
+                    <p style="text-align: justify; text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;">¡Hola! Gracias por visitarnos, Acacias-Gyms es un portal web que brinda información de varios gimnasios y los principales parques del municipio de Acacías-Meta, en estos podrás encontrar en los diferentes gimnasios información muy importante de estos como una galería, una sección para comentar y puntuar estos; del mismo modo con los entrenadores. Encontraras una sección de noticias sobre salud y bienestar y si tienes alguna duda, queja, sugerencia o quieres que tu gimnasio aparezca en nuestro portal web, podrás hacerlo a partir del formulario de contacto que encontraras en la parte superior en la sección llamada del mismo modo. Esperamos que te sirva nuestro portal web.</p>
+                    <br>
+                    <p style="text-align: justify; text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;">Si quieres conocer los diferentes gimnasios da clic sobre el botón</p>
+                    <a href="gimnasios.php" class="btn" style="">Visitar gimnasios</a>
                 </div>
             </div>
         </div>
@@ -85,7 +85,7 @@
             width: ;
         }
     </style>
-    <!-- Start building -->
+    <!-- Inicio fiiguras -->
     <div class="building-outer">
         <div class="container">
             <div class="building-list">
@@ -93,28 +93,25 @@
                     <div class="col-sm-4 col-xs-12">
                         <div class="building-box" id="radi">
                             <figure><img src="img/log/pesas.png" alt=""></figure>
-                            <h4>BODY BUILDING</h4>
-                            <p>Lorem ipsum dolor sit amet, ei veritus consetetur repudiandae eam, duo ne homero nostro
-                                moderatius.</p>
-                            <a href="classes-detail.html" class="btn">View Detail</a>
+                            <h4>Realiza ejercicio una vez por semana</h4>
+                            <p style="text-align: justify;">Lo recomendables es practicar deporte tres veces por semana para que el cuerpo esté habituado a realizar un ejercicio, Sin embargo, un día es mejor que nada.</p>
+                            <a href="https://us.emedemujer.com/bienestar/fitness/hacer-ejercicio-una-vez-a-la-semana/" target="_blank" class="btn">Más Detalles</a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <div class="building-box" id="radi">
                             <figure><img src="img/log/bici.png" alt=""></figure>
-                            <h4>FITNESS & BOXING</h4>
-                            <p>Lorem ipsum dolor sit amet, ei veritus consetetur repudiandae eam, duo ne homero nostro
-                                moderatius.</p>
-                            <a href="classes-detail.html" class="btn">View Detail</a>
+                            <h4>Monta bicicleta</h4>
+                            <p style="text-align: justify;">Montar en bicicleta supone un magnífico ejercicio cardiovascular que fortalece nuestro corazon. Además la participación de los músculos y de las articulaciones es máxima en número e intensidad durante el ejercicio del pedaleo.</p>
+                            <a href="http://www.granabike.com/consejos/lista/338-montar-en-bici.html" class="btn" target="_blank">Más Detalles</a>
                         </div>
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <div class="building-box" id="radi">
                             <figure><img src="img/log/estiramientos.png" alt=""></figure>
                             <h4>YOGA</h4>
-                            <p>Lorem ipsum dolor sit amet, ei veritus consetetur repudiandae eam, duo ne homero nostro
-                                moderatius.</p>
-                            <a href="classes-detail.html" class="btn">View Detail</a>
+                            <p style="text-align: justify;">Realiza yoga así realizaras ejercicio suave a la vez que te relajas con diversas posturas que te beneficiara a aliviar el estrés de las largas jordanas de universidad, trabajo adquiriendo al pasar del tiempo flexibilidad<p>
+                            <a href="https://www.yogayogui.com/posturas-yoga-para-relajarse/"  target="_blank" class="btn">Más Detalles</a>
                         </div>
                     </div>
                 </div>
@@ -122,13 +119,43 @@
         </div>
     </div>
 
-    <!-- End building sec -->
-    <datalist>
-        <a>
-
-        </a>
-    </datalist>
-
+    <!-- fin figuras -->
+    
+    <div class="muscle-outer" style="">
+            <figure><img src="img/Tips/1.png" alt=""></figure>
+            <div class="muscle-para">
+                <div class="outer">
+                    <h3>¡COME SANO!</h3>
+                    <h4 style="text-align: justify;">Come frutas y verduras a diario asi estaras con energia y fuerza a diario</h4>
+                </div>
+            </div>
+        </div>
+        <br>
+        <br>
+          
+         <div class="finess-outer">
+        <div class="container">
+            <h3>"Los <span>desafíos</span> son lo que hacen la vida <span>interesante</span>….<br/><span>vencerlos</span> es lo que nos da sentido."<br/>Joshua J. Marine</h3>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="muscle-outer" style="">
+        <figure><img src="img/Tips/agua.png" alt=""></figure>
+        <div class="muscle-para">
+            <div class="outer">
+                <h3>¡TOMA MUCHA AGUA!</h3>
+                <h4 style="text-align: justify;">Toma mucha agua y evita consumir bebidas azucaradas</h4>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <div class="finess-outer" style="background: #000 url(img/Tips/tip1.jpg) no-repeat center top / cover; background-attachment: fixed;text-align:center;width: 86%;position: relative;margin: 0%;margin-left: 7%;">
+        <div class="container">
+            <h3>"Para tener éxito necesitas dedicar el 100 <br/>de tu <span>entrenamiento</span>, <span>dieta y enfoque</span> mental"<br/>Arnold Schwarzenegger</h3>
+        </div>
+    </div>
     <?php
     include 'footer.php';
     ?>
