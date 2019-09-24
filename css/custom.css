@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0px;
 	margin: 0px;
 	font-family: 'Poppins', sans-serif;
-	color: #3c3c3c;
+	color: #02b3ec;
 	font-weight: bold;
 }
 h1 {
@@ -943,7 +943,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 	position: relative
 }
 .date-box {
-	background: #fb9221;
+	background: #02b3ec;
 	text-align: center;
 	padding: 10px 5px;
 	min-width: 60px;
@@ -979,7 +979,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 	font-weight:400;
 }
 .news-box p a {
-	color: #fb9221
+	color: #02b3ec
 }
 .news-box p a:hover {
 	text-decoration: underline!important

@@ -56,7 +56,7 @@ include 'header.php';
  <div class="news-outer">
             <div class="container">
                 <div class="head">
-                    <center><h3>LATEST NEWS</h3></center>
+                    <center><h3 style="font-weight: bold;">Ultimas noticias</h3></center>
                 </div>
                 <div class="news-list">
                     <div class="row">
@@ -73,10 +73,10 @@ include 'header.php';
                                         
                                     </div>
                                 </figure>
-                                <h4>".$campo['nombre']."</h4>
-                                <p style='text-align: justify;''>".$campo['descripcion']." <a href='news-detail.html'>Más Detalles...</a></p>
+                                <h4 style='font-weight: bold; text-align:justify;'>".$campo['nombre']."</h4>
+                                <p style='text-align: justify;''>".$campo['descripcion']." <a target='_blank' href='".$campo['url']."'>Más Detalles...</a></p>
                             </div>
-                        </div>";
+                        </div> <br>";
 
                         }
                         ?>
