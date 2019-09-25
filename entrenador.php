@@ -48,7 +48,7 @@
 
 <body>
     <!-- ANIMACION DE CARGA DE INICIO-->
-    <div id="loading" style="background-color:#070d38">
+    <!--<div id="loading" style="background-color:#070d38">
         <div class="element">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -57,7 +57,7 @@
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <?php
     include 'header.php';
     ?>
@@ -142,7 +142,7 @@
                          $consulta = "SELECT * FROM entrenadores WHERE id_entrenadores = '$id'";
                         $resultado = mysqli_query($conexion, $consulta);
                         while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                        echo "<figure class='about-top-right'><<img src='".$campo['imagen_entrenador']."'></figure>";
+                        echo "<figure class='about-top-right'><<img style='max-width: 500px;max-height: 300px;' src='".$campo['imagen_entrenador']."'></figure>";
 
                         ?>
                     </div>

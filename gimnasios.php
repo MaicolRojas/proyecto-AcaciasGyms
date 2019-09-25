@@ -42,7 +42,7 @@
 
 <body>
     <!-- ANIMACION DE CARGA DE INICIO-->
-    <div id="loading" style="background-color:#070d38">
+    <!--<div id="loading" style="background-color:#070d38">
         <div class="element">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -51,7 +51,7 @@
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <?php
     include 'header.php';
     ?>
@@ -85,7 +85,7 @@
                         //echo $campo['Nombre_entrenador'];
                         echo "<div class='col-sm-4 col-xs-10'>
                             <div class='trainers-box'>
-                                <a href='gimnasio.php?".$campo['id_gimnasio']."'><figure><img style ='border-radius:2%;width:500px; height:220px;' src='".$campo['imagen_gimnasio']."'></a></figure>
+                                <a href='gimnasio.php?".$campo['id_gimnasio']."'><figure><img style ='border-radius:2%;max-width:500px; max-height:220px;' src='".$campo['imagen_gimnasio']."'></a></figure>
                                 <a href='gimnasio.php?".$campo['id_gimnasio'] . "' style='color:black'><br><span class='btn' style=' font-family: poppins;background: #00b3ed; color:white;border:#ced4da;'>" . $campo['nombre_gimnasio'] ."<br></span></a>
                             </div>
                         </div>";

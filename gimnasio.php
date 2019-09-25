@@ -137,7 +137,7 @@
                     $consulta = "SELECT * FROM gimnasio WHERE id_gimnasio = '$id'";
                     $resultado = mysqli_query($conexion, $consulta);
                     while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                        echo "<figure class='about-top-right'><img style='max-width: 500px;' src='" . $campo['imagen_gimnasio'] . "'></figure>";
+                        echo "<figure class='about-top-right'><img style='max-width: 300px;' src='" . $campo['imagen_gimnasio'] . "'></figure>";
                     }
                     ?>
 
