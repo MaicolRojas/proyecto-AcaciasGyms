@@ -142,7 +142,7 @@
                          $consulta = "SELECT * FROM entrenadores WHERE id_entrenadores = '$id'";
                         $resultado = mysqli_query($conexion, $consulta);
                         while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                        echo "<figure class='about-top-right'><<img style='max-width: 500px;max-height: 300px;' src='".$campo['imagen_entrenador']."'></figure>";
+                        echo "<figure class='about-top-right'><<img style='' src='".$campo['imagen_entrenador']."'></figure>";
 
                         ?>
                     </div>

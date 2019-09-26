@@ -43,7 +43,7 @@
 
 <body>
     <!-- ANIMACION DE CARGA DE INICIO-->
-    <div id="loading" style="background-color:#070d38">
+    <!--<div id="loading" style="background-color:#070d38">
         <div class="element">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -52,7 +52,7 @@
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <?php
     include 'header.php';
     ?>

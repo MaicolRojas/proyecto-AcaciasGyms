@@ -7,9 +7,8 @@
             <div class="col-xs-12 col-sm-9 header-right">
                 <!--LOGOS DEL HEADER-->
                 <div class="header_search_outer">
-                    <span class="icon-search-icon"></span>
+                  <a href="index.php">  <span class="icon-home"></span></a>
                     <!--ICONO DE BUSQUEDA-->
-                    <input type="text" value="" placeholder="BUSCAR" class="header_search" />
                     <!--BARRA DE BUSQUEDA-->
                 </div>
                 <!-- FIN DEL CONTENEDOR -->
@@ -26,6 +25,7 @@
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="noticias.php">Noticias</a>
+
                             </li>
                            <!-- <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Gimnasios</a>

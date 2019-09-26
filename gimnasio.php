@@ -104,7 +104,7 @@
                 <div class="col-sm-7 col-xs-12">
                     <div class="about-top-left">
                     <?php
-                        echo "<h3><span>" . $campo['nombre_gimnasio'] . "</span></h3>";
+                        echo "<h3><span stye = 'color: #007bff'>" . $campo['nombre_gimnasio'] . "</span></h3>";
                         echo "<p style='text-align: justify;'>" . $campo['descripcion'] . "</p>";
                         echo "<p style='text-align: left; font-weight: bold;'> Dirección: " . $campo['direccion'] . "</p>";
                     }
@@ -137,7 +137,7 @@
                     $consulta = "SELECT * FROM gimnasio WHERE id_gimnasio = '$id'";
                     $resultado = mysqli_query($conexion, $consulta);
                     while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                        echo "<figure class='about-top-right'><img style='max-width: 300px;' src='" . $campo['imagen_gimnasio'] . "'></figure>";
+                        echo "<figure class='about-top-right'><img style='' src='" . $campo['imagen_gimnasio'] . "'></figure>";
                     }
                     ?>
 

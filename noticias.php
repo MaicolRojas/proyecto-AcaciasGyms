@@ -42,7 +42,7 @@
 <?php
 include 'header.php';
 ?>
-    <div id="loading" style="background-color:#070d38">
+    <!--<div id="loading">
         <div class="element">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -51,7 +51,7 @@ include 'header.php';
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <br><br><br>
  <div class="news-outer">
             <div class="container">
@@ -61,15 +61,23 @@ include 'header.php';
                 <div class="news-list">
                     <div class="row">
                         <?php 
-                        $es = "SELECT * FROM noticias";
+                        $es = "SELECT * FROM noticias ORDER BY fecha DESC";
                         $rses = mysqli_query($conexion, $es);
                         while ($campo = mysqli_fetch_array($rses, MYSQLI_BOTH)) {
+                            $fechaG = $campo['fecha'];
+                            $acortador = explode("-", $fechaG);
+
+                            $dia = $acortador[2];
+                            $mes = $acortador[1];
+                            $año = $acortador[0];
+
+                            $fechaB = $dia . "-".$mes."-".$año;
 
                             echo "<div class='col-sm-4 col-xs-12'>
                             <div class='news-box'>
                                 <figure><img src='".$campo['imagenes']."' alt=''>
                                     <div class='date-box'>
-                                        <span>".$campo['fecha']."</span>
+                                        <span>".$fechaB."</span>
                                         
                                     </div>
                                 </figure>

@@ -46,7 +46,7 @@
 
 <body>
     <!-- ANIMACION DE CARGA DE INICIO-->
-    <div id="loading" style="background-color:#070d38">
+    <!--<div id="loading" style="background-color:#070d38">
         <div class="element">
             <div class="sk-folding-cube">
                 <div class="sk-cube1 sk-cube"></div>
@@ -55,7 +55,7 @@
                 <div class="sk-cube3 sk-cube"></div>
             </div>
         </div>
-    </div>
+    </div>-->
     <!--EL FRAMWEORK ES Bootstrap.CSS EN LA CARPERTA CSS ADEMAS DEL ARCHVO EN LA CARPETA JS CON EL MISMO NOMBRE, PARA QUE FINALICE LA ANIMACION (JQUERY ES NECESARIO)  -->
 
     <!-- FIN DE LA ANIMACION -->
@@ -81,7 +81,7 @@
                 $consulta = "SELECT * FROM parque WHERE id_parque = '$id'";
                 $resultado = mysqli_query($conexion, $consulta);
                 while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                    echo "<h1>" . $campo['nombre_parque'] . "</h1>";
+                    echo "<h1 stye = 'color: #007bff'>" . $campo['nombre_parque'] . "</h1>";
 
                     ?>
 
