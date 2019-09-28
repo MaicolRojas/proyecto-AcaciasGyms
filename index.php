@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <title>AcaGym</title>
+    <title>AcaciasGym</title>
     <meta charset="utf-8"> <!-- FORMATO DE CAEACTERES PARA LATINOAMERICA-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- VISTA DE COMPATIBILIDAD PARA TODOS LOS NAVEGADORES - INTERNET EXPLORER 8-->
@@ -92,7 +92,7 @@
                 <div class="row">
                     <div class="col-sm-4 col-xs-12">
                         <div class="building-box" id="radi">
-                            <figure><img src="img/log/pesas.png" alt=""></figure>
+                            <figure><img src="img/log/1.png" alt="" style="max-width: 500px;max-height: 170px;"></figure>
                             <h4>Realiza ejercicio una vez por semana</h4>
                             <p style="text-align: justify;">Lo recomendables es practicar deporte tres veces por semana para que el cuerpo esté habituado a realizar un ejercicio, Sin embargo, un día es mejor que nada.</p>
                             <a href="https://us.emedemujer.com/bienestar/fitness/hacer-ejercicio-una-vez-a-la-semana/" target="_blank" class="btn">Más Detalles</a>
@@ -100,7 +100,7 @@
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <div class="building-box" id="radi">
-                            <figure><img src="img/log/bici.png" alt=""></figure>
+                            <figure><img src="img/log/bici.png" alt="" style="max-width: 500px;max-height: 170px;"></figure>
                             <h4>Monta bicicleta</h4>
                             <p style="text-align: justify;">Montar en bicicleta supone un magnífico ejercicio cardiovascular que fortalece nuestro corazon. Además la participación de los músculos y de las articulaciones es máxima en número e intensidad durante el ejercicio del pedaleo.</p>
                             <a href="http://www.granabike.com/consejos/lista/338-montar-en-bici.html" class="btn" target="_blank">Más Detalles</a>
@@ -108,7 +108,7 @@
                     </div>
                     <div class="col-sm-4 col-xs-12">
                         <div class="building-box" id="radi">
-                            <figure><img src="img/log/estiramientos.png" alt=""></figure>
+                            <figure><img src="img/log/estiramientos.png" alt="" style="max-width: 500px;max-height: 170px;"></figure>
                             <h4>YOGA</h4>
                             <p style="text-align: justify;">Realiza yoga así realizaras ejercicio suave a la vez que te relajas con diversas posturas que te beneficiara a aliviar el estrés de las largas jordanas de universidad, trabajo adquiriendo al pasar del tiempo flexibilidad<p>
                             <a href="https://www.yogayogui.com/posturas-yoga-para-relajarse/"  target="_blank" class="btn">Más Detalles</a>

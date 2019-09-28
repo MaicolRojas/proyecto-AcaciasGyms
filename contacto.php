@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title></title>
+	<title>Contacto</title>
 	    <meta charset="utf-8">
     <!-- FORMATO DE CAEACTERES PARA LATINOAMERICA-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

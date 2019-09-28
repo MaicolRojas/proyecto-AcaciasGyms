@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-09-2019 a las 18:49:42
+-- Tiempo de generación: 28-09-2019 a las 12:25:09
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -30,16 +30,9 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `calificacion_ent` (
   `id_calificacion` int(3) DEFAULT NULL,
-  `calificacion` int(1) DEFAULT NULL
+  `calificacion` int(1) DEFAULT NULL,
+  `ip` varchar(100) NOT NULL
 ) ;
-
---
--- Volcado de datos para la tabla `calificacion_ent`
---
-
-INSERT INTO `calificacion_ent` (`id_calificacion`, `calificacion`) VALUES
-(2, 3),
-(5, 1);
 
 -- --------------------------------------------------------
 
@@ -49,17 +42,16 @@ INSERT INTO `calificacion_ent` (`id_calificacion`, `calificacion`) VALUES
 
 CREATE TABLE `calificacion_gym` (
   `id_calificacion` int(3) DEFAULT NULL,
-  `calificacion` int(1) DEFAULT NULL
+  `calificacion` int(1) DEFAULT NULL,
+  `ip` varchar(100) NOT NULL
 ) ;
 
 --
 -- Volcado de datos para la tabla `calificacion_gym`
 --
 
-INSERT INTO `calificacion_gym` (`id_calificacion`, `calificacion`) VALUES
-(1, 4),
-(1, 2),
-(1, 1);
+INSERT INTO `calificacion_gym` (`id_calificacion`, `calificacion`, `ip`) VALUES
+(1, 3, '::1');
 
 -- --------------------------------------------------------
 
@@ -133,7 +125,8 @@ CREATE TABLE `correos_personas` (
 --
 
 INSERT INTO `correos_personas` (`correo`) VALUES
-('maicolandreyrojas@gmail.com');
+('maicolandreyrojas@gmail.com'),
+('elvergalarga1955@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -275,7 +268,6 @@ CREATE TABLE `galeria_gimnasio` (
 --
 
 INSERT INTO `galeria_gimnasio` (`id_galeria`, `imagen`) VALUES
-(2, 'img/gimnasio/Gimnasio2.jpg'),
 (1, 'img/gimnasios/SPINNIG FORMA/1.jpg'),
 (1, 'img/gimnasios/SPINNIG FORMA/2.jpg'),
 (1, 'img/gimnasios/SPINNIG FORMA/3.jpg'),
@@ -290,7 +282,11 @@ INSERT INTO `galeria_gimnasio` (`id_galeria`, `imagen`) VALUES
 (3, 'img/gimnasios/SAINTS ACACIAS/4.jpg'),
 (3, 'img/gimnasios/SAINTS ACACIAS/5.jpg'),
 (3, 'img/gimnasios/SAINTS ACACIAS/6.jpg'),
-(3, 'img/gimnasios/SAINTS ACACIAS/7.jpg');
+(3, 'img/gimnasios/SAINTS ACACIAS/7.jpg'),
+(2, 'img/gimnasios/DINAMIC CENTER/1.jpg'),
+(2, 'img/gimnasios/DINAMIC CENTER/2.jpg'),
+(2, 'img/gimnasios/DINAMIC CENTER/3.jpg'),
+(2, 'img/gimnasios/DINAMIC CENTER/4.jpg');
 
 -- --------------------------------------------------------
 

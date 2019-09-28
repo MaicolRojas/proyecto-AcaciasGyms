@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>Entrenadores</title>
+    <title>Gimnasios</title>
     <meta charset="utf-8"> <!-- FORMATO DE CAEACTERES PARA LATINOAMERICA-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <!-- VISTA DE COMPATIBILIDAD PARA TODOS LOS NAVEGADORES - INTERNET EXPLORER 8-->

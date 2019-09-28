@@ -84,6 +84,34 @@
                 <div class="col-sm-7 col-xs-12">
                     <div class="about-top-left">
                         <?php
+                        function get_real_ip(){
+     
+                            if (isset($_SERVER["HTTP_CLIENT_IP"]))
+                            {
+                                return $_SERVER["HTTP_CLIENT_IP"];
+                            }
+                            elseif (isset($_SERVER["HTTP_X_FORWARDED_FOR"]))
+                            {
+                                return $_SERVER["HTTP_X_FORWARDED_FOR"];
+                            }
+                            elseif (isset($_SERVER["HTTP_X_FORWARDED"]))
+                            {
+                                return $_SERVER["HTTP_X_FORWARDED"];
+                            }
+                            elseif (isset($_SERVER["HTTP_FORWARDED_FOR"]))
+                            {
+                                return $_SERVER["HTTP_FORWARDED_FOR"];
+                            }
+                            elseif (isset($_SERVER["HTTP_FORWARDED"]))
+                            {
+                                return $_SERVER["HTTP_FORWARDED"];
+                            }
+                            else
+                            {
+                                return $_SERVER["REMOTE_ADDR"];
+                            }
+                        }
+                        $ip = get_real_ip();
                         $dominio = $_SERVER["HTTP_HOST"];
                         $res = $_SERVER["REQUEST_URI"];
                         $url = "http://" . $dominio . $res;
@@ -125,7 +153,7 @@
                                 }else{
                                     $calificacion = $campo['suma_califaciones'];
                                     $calify = $calificacion / $total_calificaciones; 
-                                     echo "Nm de calificaciones (".$campo['total_califaciones'].")<br>";
+                                     echo "Numero de calificaciones [ ".$campo['total_califaciones']." ]<br>";
                                     echo "<br>";
                                     echo " <p class='clasificacion' style='font-weight: bold;'>
                                     Califiación:   ".round($calify,2)."
@@ -273,26 +301,44 @@
                 <div class="head border">
                     <h3><span style="color: #00b3ed">DA UN CALIFICACIÓN</span></h3>
                 </div>
-                <div class="rows">
-                    <form method="POST">
-                        <div class="container">
-                            <p class="clasificacion">
-                                <input id="radio1" type="submit" name="estrellas" value="5">
-                                <label for="radio1">★</label>
-                                <input id="radio2" type="submit" name="estrellas" value="4">
-                                <label for="radio2">★</label>
-                                <input id="radio3" type="submit" name="estrellas" value="3">
-                                <label for="radio3">★</label>
-                                <input id="radio4" type="submit" name="estrellas" value="2">
-                                <label for="radio4">★</label>
-                                <input id="radio5" type="submit" name="estrellas" value="1">
-                                <label for="radio5">★</label>
-                            </p>
-                           
-                    </form>
-                </div>
-                <p></p>
-            </div>
+                <?php 
+                $con = "SELECT * FROM calificacion_ent";
+                $RS = mysqli_query($conexion, $con);
+                while ($campo_gym = mysqli_fetch_array($RS, MYSQLI_BOTH)) {
+                    $ip_calificacion = $campo_gym['ip'];
+                }
+                 if (@$ip_calificacion == $ip) {
+                        echo "<div class='rows'>
+                                <form method='POST'>
+                                    <div class='container'>
+                                        <p class='clasificacion'>
+                                            <p>USTED YA REALIZO UNA CALIFICACION DE ESTE ENTRENADOR</p>
+                                        </p>
+                                </form>
+                            </div>
+                        </div>";
+                    }else{
+                        echo "<div class='rows'>
+                                <form method='POST'>
+                                    <div class='container'>
+                                        <p class='clasificacion'>
+                                            <input id='radio1' type='submit' name='estrellas' value='5'>
+                                            <label for='radio1'>★</label>
+                                            <input id='radio2' type='submit' name='estrellas' value='4'>
+                                            <label for='radio2'>★</label>
+                                            <input id='radio3' type='submit' name='estrellas' value='3'>
+                                            <label for='radio3'>★</label>
+                                            <input id='radio4' type='submit' name='estrellas' value='2'>
+                                            <label for='radio4'>★</label>
+                                            <input id='radio5' type='submit' name='estrellas' value='1'>
+                                            <label for='radio5'>★</label>
+                                        </p>
+                                       
+                                </form>
+                            </div>
+                        </div>";
+                    }
+                 ?>
         </div>
     </div>
     <!--CALIFICACIÓN-->
@@ -300,7 +346,7 @@
     if (isset($_POST['estrellas'])) {
         $estrellas = $_POST['estrellas'];
         include 'estrellas\estrellas.php';
-        guardar_estrellas_entrenadores($id,$estrellas);
+        guardar_estrellas_entrenadores($id,$estrellas,$ip);
     }
     ?>
         <!--COMENTARIO-->

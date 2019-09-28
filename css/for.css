@@ -30,7 +30,7 @@ img{max-width:100%;}
 body {
     font-family: 'Montserrat', sans-serif;
     font-size: 100%;
-   background: url(../img/banner/banner1.jpg)no-repeat 0px 0px;
+   background: url(../img/banner/banner1.jpg)no-repeat center top / cover;
     /* background: #b52e31; */
     background-size: cover;
     -webkit-background-size: cover;

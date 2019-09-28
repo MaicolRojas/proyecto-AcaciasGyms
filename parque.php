@@ -2,7 +2,7 @@
 <html lang="es">
 
 <head>
-    <title>AcaGym</title>
+    <title>Parques</title>
     <meta charset="utf-8">
     <!-- FORMATO DE CAEACTERES PARA LATINOAMERICA-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">

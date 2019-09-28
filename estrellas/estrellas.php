@@ -5,9 +5,9 @@
 	<script src="alertifyjs/alertify.js"></script>
 </head>
 <?php
-	function guardar_estrellas($id,$estrellas){
+	function guardar_estrellas($id,$estrellas,$ip){
 		include "conexion.php";
-		$consulta = "INSERT INTO calificacion_gym(id_calificacion,calificacion) VALUES('$id','$estrellas')";
+		$consulta = "INSERT INTO calificacion_gym(id_calificacion,calificacion,ip) VALUES('$id','$estrellas','$ip')";
 		$query = mysqli_query($conexion, $consulta);
 
 		if ($query) {
@@ -26,9 +26,9 @@
 
 	}
 
-	function guardar_estrellas_entrenadores($id,$estrellas){
+	function guardar_estrellas_entrenadores($id,$estrellas,$ip){
 		include "conexion.php";
-		$consulta = "INSERT INTO calificacion_ent (id_calificacion,calificacion) VALUES('$id','$estrellas')";
+		$consulta = "INSERT INTO calificacion_ent (id_calificacion,calificacion,ip) VALUES('$id','$estrellas','$ip')";
 		$query = mysqli_query($conexion, $consulta);
 
 		if ($query) {

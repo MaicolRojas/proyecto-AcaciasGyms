@@ -305,12 +305,14 @@ header.header-small .header-right {
 }
 header.header-small .header_search_outer .icon-home {
 	border-left: 1px solid #00b3ed;
+
 }
 .header_search_outer .icon-home:before {
 	content: "\e981";
 	font-size: 27px;
-	color: #00b3ed;
+	color: #ffffff;
 	cursor: pointer;
+	text-shadow: -1px -1px 1px #333, 1px -1px 1px #333, -1px 1px 1px #333, 1px 1px 1px #333;
 
 }
 header.header-small .header_search_outer .icon-home::before {
