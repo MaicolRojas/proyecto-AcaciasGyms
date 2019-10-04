@@ -179,7 +179,7 @@
         </div>
         <div class="professional-outer">
             <center>
-                <h1 style="color: white">!ENTRENA TU CUERPO!</h1>
+                <h1 style="color: white">INFORMACION PERSONAL</h1>
             </center>
         </div>
        
@@ -306,8 +306,9 @@
                 $RS = mysqli_query($conexion, $con);
                 while ($campo_gym = mysqli_fetch_array($RS, MYSQLI_BOTH)) {
                     $ip_calificacion = $campo_gym['ip'];
+                    $id_g = $campo_gym['id_calificacion'];
                 }
-                 if (@$ip_calificacion == $ip) {
+                 if (@$ip_calificacion == $ip && $id_g == $id) {
                         echo "<div class='rows'>
                                 <form method='POST'>
                                     <div class='container'>

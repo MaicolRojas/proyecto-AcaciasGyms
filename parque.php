@@ -165,7 +165,7 @@
                                     });
                                 }
                             </script>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap" async defer></script>
+                           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4HSDY6N4XAzVgZRsrsg8dkzSkY2Erh8E&callback=initMap"async defer></script>
                             <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap"async defer></script>-->
                             <!--<div id="map"></div>
                                 <script src="script.php"></script>
@@ -188,7 +188,7 @@
                             <div class="map-outer map">
                                 <?php
                                 echo "<iframe src='https://embed.waze.com/iframe?zoom=16&lat=" . $mp['latitud'] . "&lon=" . $mp['longitud'] . "&pin=1&desc=9'
-                            width='100%' height='520'></iframe>";
+                            width='100%' height='100%'></iframe>";
                             }
                             ?>
                         </div>

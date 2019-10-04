@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-09-2019 a las 12:25:09
+-- Tiempo de generación: 04-10-2019 a las 22:36:06
 -- Versión del servidor: 10.3.16-MariaDB
 -- Versión de PHP: 7.3.7
 
@@ -45,13 +45,6 @@ CREATE TABLE `calificacion_gym` (
   `calificacion` int(1) DEFAULT NULL,
   `ip` varchar(100) NOT NULL
 ) ;
-
---
--- Volcado de datos para la tabla `calificacion_gym`
---
-
-INSERT INTO `calificacion_gym` (`id_calificacion`, `calificacion`, `ip`) VALUES
-(1, 3, '::1');
 
 -- --------------------------------------------------------
 
@@ -119,14 +112,6 @@ CREATE TABLE `comentarios_entrenador` (
 CREATE TABLE `correos_personas` (
   `correo` varchar(45) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `correos_personas`
---
-
-INSERT INTO `correos_personas` (`correo`) VALUES
-('maicolandreyrojas@gmail.com'),
-('elvergalarga1955@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -242,12 +227,6 @@ CREATE TABLE `galeria_entrenador` (
 --
 
 INSERT INTO `galeria_entrenador` (`id_galeria`, `imagen`) VALUES
-(2, 'img/Galeria/entrenador 2/1.jpg'),
-(2, 'img/Galeria/entrenador 2/2.jpg'),
-(2, 'img/Galeria/entrenador 2/3.jpg'),
-(3, 'img/Galeria/entrenador 3/1.jpg'),
-(3, 'img/Galeria/entrenador 3/2.png'),
-(3, 'img/Galeria/entrenador 3/3.png'),
 (1, 'img/Entrenadores/Jairo Garces/1.jpg'),
 (1, 'img/Entrenadores/Jairo Garces/2.jpg'),
 (1, 'img/Entrenadores/Jairo Garces/3.jpg');

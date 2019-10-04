@@ -756,7 +756,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 /* ================================================== */
 .trainers-outer {
 	padding: 70px 0 60px 0;
-	background: url(../images/trainers_bg.png) no-repeat center top / cover;
+	background: url(../img/position/trainers_bg.png) no-repeat center top / cover;
 	background-attachment: fixed;
 }
 .trainers-outer .head h3 {
@@ -797,11 +797,11 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 	text-indent: -99999px;
 }
 .trainers-slider .owl-prev {
-	background: url(../images/left_arrow.png) no-repeat center center;
+	background: url(../img/position/left_arrow.png) no-repeat center center;
 	right: 60px;
 }
 .trainers-slider .owl-next {
-	background: url(../images/right_arrow.png) no-repeat center center;
+	background: url(../img/position/right_arrow.png) no-repeat center center;
 	right: 0px;
 }
 /* ================================================== */
@@ -1014,7 +1014,7 @@ header.header-small .navbar-dark .navbar-nav .nav-link {
 	padding: 0 0 24px 0;
 }
 .footer .contact-us a:hover {
-	color: #fb9221;
+	color: #00b3ed;
 }
 .footer .contact-us .fa {
 	font-size: 24px;

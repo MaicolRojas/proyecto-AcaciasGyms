@@ -26,7 +26,7 @@
                 <div class="col-sm-6 col-xs-10">
                     <div class="newletter">
                         <h3>¡SUSCRIBETE! </h3>
-                        <p>Para recibir informacion sobre todo lo relacionado con deporte y bienestar y/o gimasios del municipio de acacias meta.</p>
+                        <p>Para recibir información sobre todo lo relacionado con deporte y bienestar y/o gimnasios del municipio de acacias meta.</p>
                         <div class="search-block clearfix">
                             <form method="POST">
                                 <input name="mail" type="email" placeholder="Ingrese su correo" required>

@@ -183,7 +183,7 @@
             <div class="trainers-list">
                 <div class="trainers-slider owl-carousel">
                     <?php
-                    $consulta2 = "SELECT gimnasio.*, entrenadores.* FROM gimnasio_entrenadores INNER JOIN entrenadores ON (entrenadores.id_entrenadores = gimnasio_entrenadores.id_entrenadores) INNER JOIN gimnasio ON (gimnasio.id_gimnasio = gimnasio_entrenadores.id_gimnasio) WHERE gimnasio.id_gimnasio = '$id'";
+                    $consulta2 = "SELECT gimnasio.*, entrenadores.* FROM gimnasio_entrenadores INNER JOIN entrenadores ON (entrenadores.id_entrenadores = gimnasio_entrenadores.id_entrenadores) INNER JOIN gimnasio ON (gimnasio.id_gimnasio = gimnasio_entrenadores.id_gimnasio)";
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo2 = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='item'>
@@ -211,28 +211,28 @@
                         $reslt = mysqli_query($conexion, $Const);
                         while ($ress = mysqli_fetch_array($reslt, MYSQLI_BOTH)) {
                             ?>
-                            <figure><img src="images/counter1.png" alt=""></figure>
+                            <figure><img src="img/caracteristicas/counter1.png" alt=""></figure>
                             <?php echo " <strong class='counter'>" . $ress['entrenadores'] . "</strong>"; ?>
                             <small>Entrenadores</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
-                        <figure><img src="images/counter2.png" alt=""></figure>
+                        <figure><img src="img/caracteristicas/counter2.png" alt=""></figure>
                         <?php echo " <strong class='counter'>" . $ress['clientes_satisfechos'] . "</strong>"; ?>
                         <small>Clientes satisfechos</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
-                        <figure><img src="images/counter3.png" alt=""></figure>
+                        <figure><img src="img/caracteristicas/counter3.png" alt=""></figure>
                         <?php echo " <strong class='counter'>" . $ress['premios_recibidos'] . "</strong>"; ?>
                         <small>Premios recibidos</small>
                     </div>
                 </div>
                 <div class="col-sm-3 col-xs-12">
                     <div class="counter-box">
-                        <figure><img src="images/counter4.png" alt=""></figure>
+                        <figure><img src="img/caracteristicas/counter4.png" alt=""></figure>
                         <?php echo " <strong class='counter'>" . $ress['equipamentos'] . "</strong>"; ?>
                         <small>Euipamentos</small>
                     </div>
@@ -491,7 +491,7 @@
                                     });
                                 }
                             </script>
-                            <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap" async defer></script>
+                           <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA4HSDY6N4XAzVgZRsrsg8dkzSkY2Erh8E&callback=initMap"async defer></script>
                             <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDaeWicvigtP9xPv919E-RNoxfvC-Hqik&callback=initMap"async defer></script>-->
                             <!--<div id="map"></div>
                                 <script src="script.php"></script>
@@ -529,7 +529,7 @@
     <div class="gallery-outer about-top-outer">
         <div class="container">
             <div class="head border">
-                <h3><span style="color: #00b3ed">TÚ GALERIA</span></h3>
+                <h3><span style="color: #00b3ed">GALERIA GIMNASIO </span></h3>
             </div>
             <ul class="tabs">
                 <li class="active"><span data-filter="*">Imagenes</span></li>
@@ -547,7 +547,7 @@
                             $resultado2 = mysqli_query($conexion, $consulta2);
                             while ($campo = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                                 echo "<div class='col-sm-3 col-xs-12 element-item yoga'>
-                                <div class='gallery-box'><figure><img src='" . $campo['imagen'] . "'></figure>
+                                <div class='gallery-box'><figure><img style='' src='" . $campo['imagen'] . "'></figure>
                                 <a href='" . $campo['imagen'] . "' class='gallery-overlay'><i class='fa fa-search-plus'></i></a></div></div>";
                             }
                     }else{
@@ -570,8 +570,9 @@
                 $RS = mysqli_query($conexion, $con);
                 while ($campo_gym = mysqli_fetch_array($RS, MYSQLI_BOTH)) {
                     $ip_calificacion = $campo_gym['ip'];
+                    $id_g = $campo_gym['id_calificacion'];
                 }
-                 if (@$ip_calificacion == $ip) {
+                 if (@$ip_calificacion == $ip && $id_g == $id) {
                         echo "<div class='rows'>
                                 <form method='POST'>
                                     <div class='container'>
@@ -724,7 +725,6 @@
                                 <div class='com-txt'>
                                     <h3>" . $cm['primer_nombre'] . " " . $cm['segundo_nombre'] . "<span>Fecha: " . $cm['fecha'] . " Hr: " . $cm['hora'] . "</span></h3>
                                     <p>" . $cm['mensaje'] . "</p>
-                                    /*<a href='#''><span class='icon-reply-icon'></span>Reply</a>*/
                                 </div>";
                             }
                             ?>
