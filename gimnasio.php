@@ -183,7 +183,7 @@
             <div class="trainers-list">
                 <div class="trainers-slider owl-carousel">
                     <?php
-                    $consulta2 = "SELECT gimnasio.*, entrenadores.* FROM gimnasio_entrenadores INNER JOIN entrenadores ON (entrenadores.id_entrenadores = gimnasio_entrenadores.id_entrenadores) INNER JOIN gimnasio ON (gimnasio.id_gimnasio = gimnasio_entrenadores.id_gimnasio)";
+                    $consulta2 = "SELECT gimnasio.*, entrenadores.* FROM gimnasio_entrenadores INNER JOIN entrenadores ON (entrenadores.id_entrenadores = gimnasio_entrenadores.id_entrenadores) INNER JOIN gimnasio ON (gimnasio.id_gimnasio = gimnasio_entrenadores.id_gimnasio) WHERE gimnasio_entrenadores.id_gimnasio = '$id'";
                     $resultado2 = mysqli_query($conexion, $consulta2);
                     while ($campo2 = mysqli_fetch_array($resultado2, MYSQLI_BOTH)) {
                         echo "<div class='item'>
