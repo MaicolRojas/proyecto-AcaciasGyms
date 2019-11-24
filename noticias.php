@@ -41,6 +41,7 @@
 <body>
 <?php
 include 'header.php';
+include('conexion.php');
 ?>
     <!--<div id="loading">
         <div class="element">

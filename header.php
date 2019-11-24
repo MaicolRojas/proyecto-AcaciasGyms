@@ -20,51 +20,254 @@
                     </button>
                     <div class="collapse navbar-collapse" id="navbarNavDropdown">
                         <ul class="navbar-nav">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="index.php" class="letra">Inicio</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="noticias.php">Noticias</a>
+                             <?php
+                            $dominio = $_SERVER["HTTP_HOST"];
+                            $res = $_SERVER["REQUEST_URI"];
+                            $url = "http://" . $dominio . $res;
+                            $ubi = explode("w/", $url);
+                            $ubicacion = $ubi[1];
+                            ?>
 
+                            <?php
+                            if ($ubicacion == 'index.php' || $ubicacion == '') {
+                              echo " <li class='nav-item active'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
                             </li>
-                           <!-- <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" href="">Gimnasios</a>
-                                <div class="dropdown-menu">
-
-                                    <?php include("conexion.php");
-                                    $consulta = "SELECT * FROM gimnasio";
-
-                                    $resultado = mysqli_query($conexion, $consulta);
-                                    while ($campo = mysqli_fetch_array($resultado, MYSQLI_BOTH)) {
-                                        echo "<a class='dropdown-item' href='gimnasio.php?" . $campo['id_gimnasio'] . "" . "' style='font-family: cursive;font-size: small;'>" . $campo['nombre_gimnasio'] . "</a>";
-                                    }
-                                    ?>
-                                    <li class="nav-item">
-                                    <a class="nav-link" href="gimnasios.php">Gimnasios</a>
-                                    </li>
-                                    <div role="separator" class="dropdown">-->
-                            <li class="nav-item">
-                                <a class="nav-link" href="parques.php">Parques</a>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="gimnasios.php">Gimnasios</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="entrenadores.php">Entrenadores</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="contacto.php">Contacto</a>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
                             </li>
                             
-                    </div>
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }elseif ($ubicacion == 'noticias.php') {
+                                echo " <li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }elseif ($ubicacion == 'parques.php') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }elseif ($ubicacion == 'gimnasios.php') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item '>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";                            
+                            }elseif ($ubicacion == 'entrenadores.php') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item '>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }elseif ($ubicacion == 'contacto.php') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }if ($ubicacion == 'parque.php?1' || $ubicacion == 'parque.php?2'|| $ubicacion == 'parque.php?3' || $ubicacion == 'parque.php?4' || $ubicacion == 'parque.php?5' || $ubicacion == 'parque.php?6' || $ubicacion == 'parque.php?7' || $ubicacion == 'parque.php?8' || $ubicacion == 'parque.php?9' || $ubicacion == 'parque.php?10') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }elseif ($ubicacion == 'gimnasio.php?1' || $ubicacion == 'gimnasio.php?2' || $ubicacion == 'gimnasio.php?3') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }elseif ($ubicacion == 'entrenador.php?1' || $ubicacion == 'entrenador.php?2' || $ubicacion == 'entrenador.php?3' || $ubicacion == 'entrenador.php?4' || $ubicacion == 'entrenador.php?5') {
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item active'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }
+                            ?>
+                            
+                            </div>
+                        </div>
+                    </li>
+                </ul>
             </div>
-            </li>
-            </ul>
-        </div>
         </nav>
         <!--FIN DE BARRA DE PAGINAS-->
+        </div>
     </div>
-    </div>
-    </div>
+</div>
+    
+    <!-- Global site tag (gtag.js) - Google Analytics -->
 </header>
 <!--FIN DEL HEADER-->
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-152757104-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-152757104-1');
+</script>

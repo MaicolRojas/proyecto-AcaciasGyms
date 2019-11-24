@@ -513,7 +513,7 @@
                     <div class="container">
                         <div class="map-outer map">
                         <?php
-                            echo "<iframe src='https://embed.waze.com/iframe?zoom=16&lat=" . $mp['latitud'] . "&lon=" . $mp['longitud'] . "&pin=1&desc=9'
+                            echo "<iframe src='https://embed.waze.com/iframe?zoom=16&lat=" . $mp['latitud'] . "&lon=" . $mp['longitud'] . "&pin=1&desc=mapasGym'
                             width='100%' height='520'></iframe>";
                         }
                         ?>

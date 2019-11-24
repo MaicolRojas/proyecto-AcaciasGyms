@@ -53,7 +53,7 @@
         </div>
     </div>-->
     <?php
-    include 'header.php';
+    include('header.php');
     ?>
     <!-- INICIO DEL BANNER -->
     <div class="banner-outer inner-banner trainers-banner" style="background: url(img/banner/banner1a.jpg) no-repeat center top / cover;">
