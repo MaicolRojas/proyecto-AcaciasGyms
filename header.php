@@ -173,7 +173,7 @@
                             <li class='nav-item active'>
                                 <a class='nav-link' href='contacto.php'>Contacto</a>
                             </li>";
-                            }if ($ubicacion == 'parque.php?1' || $ubicacion == 'parque.php?2'|| $ubicacion == 'parque.php?3' || $ubicacion == 'parque.php?4' || $ubicacion == 'parque.php?5' || $ubicacion == 'parque.php?6' || $ubicacion == 'parque.php?7' || $ubicacion == 'parque.php?8' || $ubicacion == 'parque.php?9' || $ubicacion == 'parque.php?10') {
+                            }elseif ($ubicacion == 'parque.php?1' || $ubicacion == 'parque.php?2'|| $ubicacion == 'parque.php?3' || $ubicacion == 'parque.php?4' || $ubicacion == 'parque.php?5' || $ubicacion == 'parque.php?6' || $ubicacion == 'parque.php?7' || $ubicacion == 'parque.php?8' || $ubicacion == 'parque.php?9' || $ubicacion == 'parque.php?10') {
                                 echo "<li class='nav-item'>
                                 <a class='nav-link' href='index.php' class='letra'>Inicio</a>
                             </li>
@@ -234,7 +234,31 @@
                                 <a class='nav-link' href='parques.php'>Parques</a>
                             </li>
                             
+                            <li class='nav-item'>
+                                <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
+                            </li>
+
                             <li class='nav-item active'>
+                                <a class='nav-link' href='entrenadores.php'>Entrenadores</a>
+                            </li>
+
+                            <li class='nav-item'>
+                                <a class='nav-link' href='contacto.php'>Contacto</a>
+                            </li>";
+                            }else{
+                                echo "<li class='nav-item'>
+                                <a class='nav-link' href='index.php' class='letra'>Inicio</a>
+                            </li>
+                
+                            <li class='nav-item'>
+                                <a class='nav-link' href='noticias.php'>Noticias</a>
+                            </li>
+                           
+                            <li class='nav-item'>
+                                <a class='nav-link' href='parques.php'>Parques</a>
+                            </li>
+                            
+                            <li class='nav-item'>
                                 <a class='nav-link' href='gimnasios.php'>Gimnasios</a>
                             </li>
 
